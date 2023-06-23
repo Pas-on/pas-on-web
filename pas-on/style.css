@@ -1,0 +1,150 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap");
+
+/* global styling */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+* {
+    margin: 0;
+}
+
+:root {
+    --main-bg: rgba(221, 221, 221, 1);
+}
+
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    font-family: "Poppins", sans-serif;
+    background: var(--main-bg);
+    min-height: 100vh;
+    width: 100vw;
+}
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
+
+/* navbar styling */
+header {
+    display: flex;
+    background: #fff;
+    padding: 1rem;
+    justify-content: space-between;
+}
+
+header img {
+    width: 50px;
+    aspect-ratio: 1;
+}
+
+.search-bar {
+    display: flex;
+    font-size: larger;
+    align-items: center;
+    border-radius: 6px;
+    border: 1px solid;
+    overflow: hidden;
+}
+
+.search-bar input {
+    height: 100%;
+    border: none;
+    padding-inline: 1rem;
+    width: 500px;
+}
+
+.search-bar .icon {
+    display: grid;
+    padding: 0.5rem;
+    height: 100%;
+    place-items: center;
+    background: green;
+}
+
+nav {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.vertical-line {
+    width: 2px;
+    background: black;
+    height: 100%;
+}
+
+.profile {
+    border-radius: 50%;
+    border: 1px solid hsla(0, 0%, 0%, 0.278);
+    aspect-ratio: 1;
+    width: 50px;
+    background-image: url(assets/jokowi.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* carousel */
+.carousel {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.carousel ul {
+    list-style-type: none;
+    padding: 0;
+    height: fit-content;
+}
+
+.carousel .button {
+    display: grid;
+    place-items: center;
+    position: absolute;
+    background: hsl(0, 0%, 72%);
+    border-radius: 50%;
+    aspect-ratio: 1;
+    width: 50px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.carousel #cr-left-button {
+    left: 0;
+}
+
+.carousel #cr-right-button {
+    right: 0;
+}
+
+.slide > img {
+    display: none;
+    height: 0;
+}
+
+.slide[data-current] > img {
+    opacity: 1;
+    display: block;
+    height: fit-content;
+}

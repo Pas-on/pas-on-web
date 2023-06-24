@@ -200,8 +200,7 @@ nav {
 
 .slide[data-current] img {
     opacity: 1;
-    width: 100vw;
-    height: auto;
+    height: fit-content;
 }
 
 /* new-item-section */

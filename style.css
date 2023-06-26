@@ -35,6 +35,7 @@ body {
     background: var(--main-bg);
     min-height: 100vh;
     width: 100vw;
+    overflow-x: hidden;
 }
 img,
 picture,

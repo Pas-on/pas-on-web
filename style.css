@@ -137,7 +137,7 @@ hr {
     position: fixed;
     flex-direction: column;
     z-index: 6;
-    width: 30%;
+    width: 80%;
     transform: translateX(-100%);
     background: white;
     transition: transform 0.2s ease-in-out;

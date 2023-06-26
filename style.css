@@ -35,6 +35,7 @@ body {
     background: var(--main-bg);
     min-height: 100vh;
     width: 100vw;
+    overflow-y: hidden;
 }
 img,
 picture,
@@ -508,10 +509,6 @@ nav {
 @media (max-width: 480px) {
     .item-container {
         overflow-x: auto;
-    }
-    ::-webkit-scrollbar {
-        width: 0;
-        background: transparent;
     }
     .button {
         display: none;

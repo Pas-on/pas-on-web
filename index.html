@@ -11,6 +11,11 @@
     </head>
     <body>
         <header>
+            <div class="hamburger">
+                <label class="hamburger-menu">
+                    <input type="checkbox" id="hamburger-button" />
+                </label>
+            </div>
             <img src="assets/logo.png" alt="logo" />
             <div class="search-bar">
                 <input type="text" placeholder="mau cari apa hari ini?" />
@@ -25,6 +30,12 @@
                 <div class="profile"></div>
             </nav>
         </header>
+        <div class="drawer" id="drawer">
+            <div>
+                <div class="profile"></div>
+                <p>Jokowi</p>
+            </div>
+        </div>
         <div class="carousel" data-carousel>
             <div class="button" id="cr-left-button" data-cr-button="prev">
                 <i class="fa-solid fa-lg fa-chevron-left"></i>
@@ -43,8 +54,8 @@
         </div>
         <main>
             <div class="container">
-                <section class="new-item">
-                    <h2>new items</h2>
+                <section class="sub-item">
+                    <h2 class="section-header">item baru</h2>
 
                     <div class="product-slider" id="product-slider">
                         <div class="button hidden" data-sl-button="prev" id="sl-left-button">
@@ -58,70 +69,78 @@
                                 <div class="image-wrapper">
                                     <img src="assets/aneka_sayuran-removebg-preview.png" alt="sayuran" />
                                 </div>
-                                <div>
-                                    <h3>aneka sayuran</h3>
-                                    <p>~700gr</p>
-                                    <p>Rp.150.000</p>
+                                <div class="product-desc">
+                                    <div>
+                                        <p class="product-price">Rp.150.000</p>
+                                        <p class="product-weight">~700gr</p>
+                                    </div>
+                                    <span class="product-title"> aneka sayuran </span>
+                                    <p class="product-seller">toko abadi</p>
                                 </div>
                             </div>
                             <div class="slider-item">
                                 <div class="image-wrapper">
-                                    <img src="assets/bawang_putih-removebg-preview.png" alt="bawang putih" />
+                                    <img src="assets/bawang_putih-removebg-preview.png" alt="bawang" />
                                 </div>
-                                <div>
-                                    <h3>bawang putih besaradsasdasdasdasdasd</h3>
-                                    <p>~200gr</p>
-                                    <p>Rp.750.000</p>
-                                </div>
-                            </div>
-                            <div class="slider-item">
-                                <div class="image-wrapper">
-                                    <img src="assets/aneka_sayuran-removebg-preview.png" alt="sayuran" />
-                                </div>
-                                <div>
-                                    <h3>aneka sayuran</h3>
-                                    <p>~200gr</p>
-                                    <p>Rp.750.000</p>
+                                <div class="product-desc">
+                                    <div>
+                                        <p class="product-price">Rp.70.000</p>
+                                        <p class="product-weight">~350gr</p>
+                                    </div>
+                                    <span class="product-title">bawang putih jepang</span>
+                                    <p class="product-seller">toko abadi</p>
                                 </div>
                             </div>
                             <div class="slider-item">
                                 <div class="image-wrapper">
-                                    <img src="assets/aneka_sayuran-removebg-preview.png" alt="sayuran" />
+                                    <img src="assets/beras-removebg-preview.png" alt="beras" />
                                 </div>
-                                <div>
-                                    <h3>aneka sayuran</h3>
-                                    <p>~200gr</p>
-                                    <p>Rp.750.000</p>
-                                </div>
-                            </div>
-                            <div class="slider-item">
-                                <div class="image-wrapper">
-                                    <img src="assets/daging_sapi-removebg-preview.png" alt="daging" />
-                                </div>
-                                <div>
-                                    <h3>aneka sayuran</h3>
-                                    <p>~200gr</p>
-                                    <p>Rp.750.000</p>
+                                <div class="product-desc">
+                                    <div>
+                                        <p class="product-price">Rp.150.000</p>
+                                        <p class="product-weight">10kg</p>
+                                    </div>
+                                    <span class="product-title">beras import jepang 10kg</span>
+                                    <p class="product-seller">toko kelontong andi</p>
                                 </div>
                             </div>
                             <div class="slider-item">
                                 <div class="image-wrapper">
-                                    <img src="assets/aneka_sayuran-removebg-preview.png" alt="sayuran" />
+                                    <img src="assets/jagung-removebg-preview.png" alt="jagung" />
                                 </div>
-                                <div>
-                                    <h3>aneka sayuran</h3>
-                                    <p>~200gr</p>
-                                    <p>Rp.750.000</p>
+                                <div class="product-desc">
+                                    <div>
+                                        <p class="product-price">Rp.30.000</p>
+                                        <p class="product-weight">~500gr</p>
+                                    </div>
+                                    <span class="product-title">jagung hawai organik</span>
+                                    <p class="product-seller">toko abadi</p>
                                 </div>
                             </div>
                             <div class="slider-item">
                                 <div class="image-wrapper">
-                                    <img src="assets/aneka_sayuran-removebg-preview.png" alt="sayuran" />
+                                    <img src="assets/wagyu-removebg-preview.png" alt="wagyu a5" />
                                 </div>
-                                <div>
-                                    <h3>aneka sayuran</h3>
-                                    <p>~200gr</p>
-                                    <p>Rp.750.000</p>
+                                <div class="product-desc">
+                                    <div>
+                                        <p class="product-price">Rp.502.000</p>
+                                        <p class="product-weight">~500gr</p>
+                                    </div>
+                                    <span class="product-title">Wagyu Beef Sirloin Steak A5 Bliss Japanese </span>
+                                    <p class="product-seller">toko abadi</p>
+                                </div>
+                            </div>
+                            <div class="slider-item">
+                                <div class="image-wrapper">
+                                    <img src="assets/peanut.png" alt="kacang" />
+                                </div>
+                                <div class="product-desc">
+                                    <div>
+                                        <p class="product-price">Rp.101.000</p>
+                                        <p class="product-weight">~500gr</p>
+                                    </div>
+                                    <span class="product-title">roasted almond</span>
+                                    <p class="product-seller">toko kelontong andi</p>
                                 </div>
                             </div>
                         </div>

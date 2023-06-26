@@ -7,6 +7,9 @@ const productSlider = document.getElementById("product-slider")
 const slLeftButton = document.getElementById("sl-left-button")
 const slRightButton = document.getElementById("sl-right-button")
 const productSliderItem = document.querySelectorAll(".slider-item")
+const button = document.getElementById("hamburger-button")
+const drawer = document.getElementById("drawer")
+const navbar = document.querySelector("header")
 //carousel logic
 
 crButtons.forEach(button => {
@@ -29,7 +32,7 @@ let slidePos = 0
 const currentItemsLength = getComputedStyle(productSlider).getPropertyValue("--max-item")
 
 checkBoundary()
-
+console.log(productSliderItem[0].offsetWidth)
 function translateSlider() {
     checkBoundary()
 
@@ -66,3 +69,14 @@ function checkBoundary() {
 
 slLeftButton.addEventListener("click", slideToPrev)
 slRightButton.addEventListener("click", slideToNext)
+
+//drawer logic
+button.addEventListener("change", () => {
+    if (button.checked) {
+        const navbarHeight = navbar.offsetHeight
+        drawer.style.top = `${navbarHeight}px`
+        drawer.classList.add("open")
+    } else {
+        drawer.classList.remove("open")
+    }
+})

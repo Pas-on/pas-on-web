@@ -75,6 +75,7 @@ button.addEventListener("change", () => {
     if (button.checked) {
         const navbarHeight = navbar.offsetHeight
         drawer.style.top = `${navbarHeight}px`
+        drawer.style.height = `calc(100vh - ${navbarHeight}px)`
         drawer.classList.add("open")
     } else {
         drawer.classList.remove("open")

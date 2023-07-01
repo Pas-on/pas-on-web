@@ -1,12 +1,7 @@
-const carouselItems = document.querySelector(".slide")
+import { ProductSlider } from "./slider.js"
+
 const crButtons = document.querySelectorAll("[data-cr-button]")
-const itemContainer = document.querySelector("#item-container")
-const slButtons = document.querySelectorAll("[data-sl-button]")
-const slItem = document.querySelector(".slider-item")
-const productSlider = document.getElementById("product-slider")
-const slLeftButton = document.getElementById("sl-left-button")
-const slRightButton = document.getElementById("sl-right-button")
-const productSliderItem = document.querySelectorAll(".slider-item")
+
 const button = document.getElementById("hamburger-button")
 const drawer = document.getElementById("drawer")
 const navbar = document.querySelector("header")
@@ -25,50 +20,18 @@ crButtons.forEach(button => {
     })
 })
 
-//product-slider
+//new-product-slider
+const newItemsWrapper = document.getElementById("new-items")
+const npLeftButton = document.getElementById("np-left-button")
+const npRightButton = document.getElementById("np-right-button")
+new ProductSlider(newItemsWrapper, npLeftButton, npRightButton)
 
-let slidePos = 0
+// meat-product-slider
+const meatItemsWrapper = document.getElementById("meat-items")
+const meatLeftButton = document.getElementById("meat-left-button")
+const meatRightButton = document.getElementById("meat-right-button")
+new ProductSlider(meatItemsWrapper, meatLeftButton, meatRightButton)
 
-const currentItemsLength = getComputedStyle(productSlider).getPropertyValue("--max-item")
-
-checkBoundary()
-console.log(productSliderItem[0].offsetWidth)
-function translateSlider() {
-    checkBoundary()
-
-    itemContainer.style.transform = `translateX(${slidePos}px)`
-}
-
-function slideToNext() {
-    slLeftButton.classList.remove("hidden")
-    slidePos -= productSliderItem[0].offsetWidth * currentItemsLength
-    translateSlider()
-}
-
-function slideToPrev() {
-    slidePos += productSliderItem[0].offsetWidth * currentItemsLength
-    translateSlider()
-}
-
-function checkBoundary() {
-    if (slidePos === 0) {
-        slLeftButton.classList.add("hidden")
-    } else {
-        slLeftButton.classList.remove("hidden")
-    }
-
-    if (
-        Math.abs(slidePos) + productSliderItem[0].offsetWidth * currentItemsLength >=
-        productSliderItem[0].offsetWidth * productSliderItem.length
-    ) {
-        slRightButton.classList.add("hidden")
-    } else {
-        slRightButton.classList.remove("hidden")
-    }
-}
-
-slLeftButton.addEventListener("click", slideToPrev)
-slRightButton.addEventListener("click", slideToNext)
 
 //drawer logic
 button.addEventListener("change", () => {
@@ -81,3 +44,15 @@ button.addEventListener("change", () => {
         drawer.classList.remove("open")
     }
 })
+
+// on scroll animation
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.animation = "var(--fade-in-animation)"
+        }
+    })
+})
+
+const hiddenElements = document.querySelectorAll(".elHidden")
+hiddenElements.forEach(el => observer.observe(el))

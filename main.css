@@ -327,18 +327,4 @@
     }
 }
 
-@media(prefers-reduce-motion) {
-    .elHidden {
-        transition: none;
-    }
-}
 
-@keyframes fade-in {
-    from {
-        opacity: 0;
-        transform: translateX(10px);
-    }
-    to {
-        transform: translateX(0);
-    }
-}

@@ -47,17 +47,14 @@ button.addEventListener("change", () => {
 
 
 
-profile.addEventListener("mouseleave", () => {
-    dropDown.classList.remove("open")
-})
-
 
 // on scroll animation
 const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
+            console.log("intesecting")
             entry.target.style.animation = "var(--fade-in-animation)"
-        }
+        } 
     })
 })
 

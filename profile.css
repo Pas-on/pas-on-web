@@ -1,11 +1,46 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Verdana, Geneva, Tahoma, sans-serif; 
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.container{
+.content {
+    max-width: 1080px;
+    margin: 0 auto;
+    background-color: aqua;
+    height: 800px;
+    flex-direction: column;
+}
+
+.content .pb{
+    width: 100%;
+    height: 200px;
+    background-color: bisque;
+}
+
+.isi{
+    width: 1080px;
+    height: 600px;
+    background-color: blueviolet;
+}
+
+.isi .user-details{
+    width: 800px;
+    flex: 2;
+    height: 100%;
+    background-color: black;
+    float: left;
+}
+
+.isi .foto{
+    width: 280px;
+    flex: 1;
+    height: 100%;
+    float: right;
+    background-color: chartreuse;
+}
+/* .container{
     max-width: 700px;
     width: 100%;
     padding: 25px 30px;
@@ -17,7 +52,7 @@
 .container .title{
     font-size: 25px;
     font-weight: 500;
-    color: #black;
+    color: #030005;
     position: relative;
 }
 
@@ -33,9 +68,9 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-}
+} */
 
-form .user-details .input-box{
+/* form .user-details .input-box{
     margin: 20px 0 12px 0;
     width: calc(100% / 2 -20px);
 }
@@ -60,7 +95,7 @@ form .user-details .input-box{
 
 .user-details .input-box input:focus,
 .user-details .input-box input:valid{
-    border-color: #white;
+    border-color: white;
 }
 
 form .gender .gender-title{
@@ -115,4 +150,4 @@ form .button input{
     border: none;
     font-size: 1;
     background: linear-gradient(135deg,#030005,#3D0863 ); ;
-}
+} */

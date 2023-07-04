@@ -3,14 +3,16 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="style.css" />
+        <link rel="stylesheet" href="navbar.css" />
         <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" />
+        <link rel="stylesheet" href="main.css">
+        <link rel="stylesheet" href="template.css">
         <script src="https://kit.fontawesome.com/aefe7f07e5.js" crossorigin="anonymous"></script>
         <title>Pas-on: marketplace groceries terbaik di indonesia</title>
         <script type="module" src="main.js" defer></script>
     </head>
     <body>
-        <header>
+        <header class="header">
             <div class="hamburger">
                 <label class="hamburger-menu">
                     <input type="checkbox" id="hamburger-button" />
@@ -23,16 +25,32 @@
                     <i class="fa-solid fa-lg fa-magnifying-glass" style="color: white"></i>
                 </div>
             </div>
+             
             <nav>
                 <i class="fa-solid fa-basket-shopping fa-xl"></i>
                 <i class="fa-solid fa-heart wishlist-icon fa-xl"></i>
                 <div class="vertical-line"></div>
-                <div class="profile"></div>
+                <div class="profile">
+                    <img src="assets/jokowi.jpeg" alt="profile-picture">
+                    <ul class="drop-down-profile">
+                        <div class="arrow"></div>
+                        <li>
+                            <a href="profile.html">
+                                profile
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">log out</a>
+                        </li>
+                    </ul>
+                </div>    
             </nav>
+            
             <nav class="nav-mobile">
                 <i class="fa-solid fa-lg fa-magnifying-glass"></i>
                 <i class="fa-solid fa-basket-shopping fa-xl"></i>
             </nav>
+            
         </header>
         <div class="drawer" id="drawer">
             <div>
@@ -54,6 +72,8 @@
                 <p>log out</p>
             </div>
         </div>
+
+       
 
         <div class="carousel" data-carousel>
             <div class="button" id="cr-left-button" data-cr-button="prev">

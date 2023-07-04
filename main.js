@@ -45,6 +45,13 @@ button.addEventListener("change", () => {
     }
 })
 
+
+
+profile.addEventListener("mouseleave", () => {
+    dropDown.classList.remove("open")
+})
+
+
 // on scroll animation
 const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {

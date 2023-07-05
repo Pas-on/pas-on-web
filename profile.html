@@ -4,113 +4,134 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Pas-on: marketplace groceries terbaik di indonesia</title>
+    <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="template.css">
     <link rel="stylesheet" href="navbar.css">
     <link rel="stylesheet" href="profile.css">
     <script src="https://kit.fontawesome.com/aefe7f07e5.js" crossorigin="anonymous"></script>
+    <script src="profile.js" defer></script>
 </head>
 
 <body>
-        <header class="header">
-            <div class="hamburger">
-                <label class="hamburger-menu">
-                    <input type="checkbox" id="hamburger-button" />
-                </label>
-            </div>
-            <img src="assets/logo.png" alt="logo" />
-            <div class="search-bar">
-                <input type="text" placeholder="mau cari apa hari ini?" />
-                <div class="icon">
-                    <i class="fa-solid fa-lg fa-magnifying-glass" style="color: white"></i>
-                </div>
-            </div>
-            <nav>
-                <i class="fa-solid fa-basket-shopping fa-xl"></i>
-                <i class="fa-solid fa-heart wishlist-icon fa-xl"></i>
-                <div class="vertical-line"></div>
-                <a href="./profile.html">
-                    <div class="profile"></div>
-
-                </a>
-            </nav>
-            <nav class="nav-mobile">
-                <i class="fa-solid fa-lg fa-magnifying-glass"></i>
-                <i class="fa-solid fa-basket-shopping fa-xl"></i>
-            </nav>
-        </header>
-        <div class="drawer" id="drawer">
-            <div>
-                <div class="profile"></div>
-                <p>Jokowi</p>
-            </div>
-            <div>
-                <i class="fa-regular fa-heart fa-xl"></i>
-                <p>wishlist</p>
-                <i class="fa-solid fa-chevron-right"></i>
-            </div>
-            <div>
-                <i class="fa-solid fa-percent fa-xl"></i>
-                <p>promos</p>
-                <i class="fa-solid fa-chevron-right"></i>
-            </div>
-            <div>
-                <i class="fa-solid fa-arrow-right-from-bracket"></i>
-                <p>log out</p>
+    <header class="header">
+        <div class="hamburger">
+            <label class="hamburger-menu">
+                <input type="checkbox" id="hamburger-button" />
+            </label>
+        </div>
+        <img onclick="location.href='index.html'" src="assets/logo.png" alt="logo" />
+        <div class="search-bar">
+            <input type="text" placeholder="mau cari apa hari ini?" />
+            <div class="icon">
+                <i class="fa-solid fa-lg fa-magnifying-glass" style="color: white"></i>
             </div>
         </div>
+         
+        <nav>
+            <i class="fa-solid fa-basket-shopping fa-xl"></i>
+            <i class="fa-solid fa-heart wishlist-icon fa-xl"></i>
+            <div class="vertical-line"></div>
+            <div class="profile">
+                <img src="assets/jokowi.jpeg" alt="profile-picture">
+                <ul class="drop-down-profile">
+                    <div class="arrow"></div>
+                    <li onclick="location.href='profile.html'">
+                            profile
+                    </li>
+                    <li onclick="location.href='login.html'">
+                        log out
+                    </li>
+                </ul>
+            </div>    
+        </nav>
+        
+        <nav class="nav-mobile">
+            <i class="fa-solid fa-lg fa-magnifying-glass"></i>
+            <i class="fa-solid fa-basket-shopping fa-xl"></i>
+        </nav>
+        
+    </header>
+    <div class="drawer" id="drawer">
+        <div>
+            <div class="profile"></div>
+            <p>Jokowi</p>
+        </div>
+        <div>
+            <i class="fa-regular fa-heart fa-xl"></i>
+            <p>wishlist</p>
+            <i class="fa-solid fa-chevron-right"></i>
+        </div>
+        <div>
+            <i class="fa-solid fa-percent fa-xl"></i>
+            <p>promos</p>
+            <i class="fa-solid fa-chevron-right"></i>
+        </div>
+        <div>
+            <i class="fa-solid fa-arrow-right-from-bracket"></i>
+            <p>log out</p>
+        </div>
     </div>
+    
     <div class="content">
         <div class="pb">
             Profil Saya <br>
             Kelola informasi profil Anda untuk mengontrol, melindungi dan mengamankan akun
         </div>
-        <div class="user-details">
-            <div class="input-box">
-                <span class="details">Username</span>
-                <input type="text" placeholder="Masukkan Username Anda" required>
-            </div>
-            <div class="input-box">
-                <span class="details">Nama</span>
-                <input type="text" placeholder="Masukkan Nama Anda" required>
-            </div>
-            <div class="input-box">
-                <span class="details">Email</span>
-                <input type="text" placeholder="Masukkan Email Anda" required>
-            </div>
-            <div class="input-box">
-                <span class="details">Nomor Telepon</span>
-                <input type="text" placeholder="Masukkan Nomor Telepon Anda" required>
-            </div>
-            <div class="input-box">
-                <span class="details">Tanggal Lahir</span>
-                <input type="text" placeholder="Masukkan Tanggal Lahir Anda" required>
-            </div>
-            <div class="gender">
-                <input type="radio" name="gender" id="dot-1">
-                <input type="radio" name="gender" id="dot-2">
-                <input type="radio" name="gender" id="dot-3">
-                <span class="gender-title">Gender</span>
-                <div class="category">
-                    <label for="dot-1">
-                        <span class="dot one"></span>
-                        <span class="gender">Male</span>
-                    </label>
-                    <label for="dot-2">
-                        <span class="dot two"></span>
-                        <span class="gender">Female</span>
-                    </label>
-                    <label for="dot-3">
-                        <span class="dot three"></span>
-                        <span class="gender">Lainnya</span>
-                    </label>
+        <div class="isi">
+            <div class="user-details">
+                <div class="input-box">
+                    <span class="details">Username</span>
+                    <input type="text" placeholder="Masukkan Username Anda" required>
+                </div>
+                <div class="input-box">
+                    <span class="details">Nama</span>
+                    <input type="text" placeholder="Masukkan Nama Anda" required>
+                </div>
+                <div class="input-box">
+                    <span class="details">Email</span>
+                    <input type="text" placeholder="Masukkan Email Anda" required>
+                </div>
+                <div class="input-box">
+                    <span class="details">Nomor Telepon</span>
+                    <input type="text" placeholder="Masukkan Nomor Telepon Anda" required>
+                </div>
+                <div class="input-box">
+                    <span class="details">Tanggal Lahir</span>
+                    <input type="text" placeholder="Masukkan Tanggal Lahir Anda" required>
+                </div>
+                <div class="gender">
+                    <input type="radio" name="gender" id="dot-1">
+                    <input type="radio" name="gender" id="dot-2">
+                    <input type="radio" name="gender" id="dot-3">
+                    <span class="gender-title">Gender</span>
+                    <div class="category">
+                        <label for="dot-1">
+                            <span class="dot one"></span>
+                            <span class="gender">Male</span>
+                        </label>
+                        <label for="dot-2">
+                            <span class="dot two"></span>
+                            <span class="gender">Female</span>
+                        </label>
+                        <label for="dot-3">
+                            <span class="dot three"></span>
+                            <span class="gender">Lainnya</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="button">
+                    <input type="Submit" value="Submit">
                 </div>
             </div>
-            <div class="button">
-                <input type="Submit" value="Submit">
+            <div class="foto">
+                <img src="./assets/jokowi.jpeg" alt="profile-picture">
+                <div class="editfoto">
+                    <input type="submit" value="edit">
+                </div>
             </div>
-    </div>
-
+        </div>
+        
 </body>
 
 </html>

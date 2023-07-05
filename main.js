@@ -45,9 +45,6 @@ button.addEventListener("change", () => {
     }
 })
 
-
-
-
 // on scroll animation
 const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {

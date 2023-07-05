@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/aefe7f07e5.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./template.css">
+    <link rel="stylesheet" href="./navbar.css">
+    <link rel="stylesheet" href="./wishlist.css">
+</head>
+<body>
+    <header class="header">
+        <div class="hamburger">
+            <label class="hamburger-menu">
+                <input type="checkbox" id="hamburger-button" />
+            </label>
+        </div>
+        <img src="assets/logo.png" alt="logo" onclick="location.href='index.html'" />
+        <div class="search-bar">
+            <input type="text" placeholder="mau cari apa hari ini?" />
+            <div class="icon">
+                <i class="fa-solid fa-lg fa-magnifying-glass" style="color: white"></i>
+            </div>
+        </div>
+         
+        <nav>
+            <i class="fa-solid fa-basket-shopping fa-xl"></i>
+            <i class="fa-solid fa-heart wishlist-icon fa-xl"></i>
+            <div class="vertical-line"></div>
+            <div class="profile">
+                <img src="assets/jokowi.jpeg" alt="profile-picture">
+                <ul class="drop-down-profile">
+                    <div class="arrow"></div>
+                    <li onclick="location.href='profile.html'">
+                            profile
+                    </li>
+                    <li onclick="location.href='login.html'">
+                        log out
+                    </li>
+                </ul>
+            </div>    
+        </nav>
+        
+        <nav class="nav-mobile">
+            <i class="fa-solid fa-lg fa-magnifying-glass"></i>
+            <i class="fa-solid fa-basket-shopping fa-xl"></i>
+        </nav>
+        
+    </header>
+    <div class="drawer" id="drawer">
+        <div>
+            <div class="profile"></div>
+            <p>Jokowi</p>
+        </div>
+        <div>
+            <i class="fa-regular fa-heart fa-xl"></i>
+            <p>wishlist</p>
+            <i class="fa-solid fa-chevron-right"></i>
+        </div>
+        <div>
+            <i class="fa-solid fa-percent fa-xl"></i>
+            <p>promos</p>
+            <i class="fa-solid fa-chevron-right"></i>
+        </div>
+        <div>
+            <i class="fa-solid fa-arrow-right-from-bracket"></i>
+            <p>log out</p>
+        </div>
+    </div>
+
+    <div class="title">
+        <h1>My Wishlist</h1>
+        <h2>View favorite product you've saved to your wishlist</h2>
+    </div>
+
+    <div class="container">
+        <div class="product">
+            <img src="./assets/bawang_putih-removebg-preview.png" alt="bawang-putih">
+            <h3>bawang putih jepang</h3>
+            <p>~200 Gr</p>
+            <h3>Rp. 100.000</h3>
+            <input type="button" value="Add to bag" class="buy-btn">
+        </div>
+
+        <div class="product">
+            <img src="./assets/aneka_sayuran-removebg-preview.png" alt="sayuran">
+            <h3>aneka sayuran/h3>
+            <p>~200 Gr</p>
+            <h3>Rp. 100.000</h3>
+            <input type="button" value="Add to bag" class="buy-btn">
+        </div>
+
+        <div class="product">
+            <img src="./assets/daging_sapi-removebg-preview.png" alt="daging-sapi">
+            <h3>daging sapi</h3>
+            <p>~200 Gr</p>
+            <h3>Rp. 100.000</h3>
+            <input type="button" value="Add to bag" class="buy-btn">
+        </div>
+
+        <div class="product">
+            <img src="./assets/jagung-removebg-preview.png" alt="jagung">
+            <h3>jagung hawai organik</h3>
+            <p>~200 Gr</p>
+            <h3>Rp. 100.000</h3>
+            <input type="button" value="Add to bag" class="buy-btn">
+        </div>
+
+        <div class="product">
+            <img src="./assets/jagung-removebg-preview.png" alt="jagung">
+            <h3>jagung hawai organik</h3>
+            <p>~200 Gr</p>
+            <h3>Rp. 100.000</h3>
+            <input type="button" value="Add to bag" class="buy-btn">
+        </div>
+    </div>
+</body>
+</html>

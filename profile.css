@@ -23,23 +23,17 @@
 .isi .user-details {
     /* width : 800px; */
 
-    background-color: black;
-    float: left;
+    background-color: #fff;
     flex: 2;
     color: black;
-    gap: 1rem;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
 }
 
 .isi .foto {
     /* width :280px; */
     flex: 1;
-    background-color: #fffafa;
+    background-color: chartreuse;
     display: flex;
-    gap: 1rem;
-    padding-top: 1rem;
+    justify-content: center;
     align-items: center;
     flex-direction: column;
 }
@@ -73,6 +67,12 @@
     justify-content: center;
 }
 
+.user-details {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+
 .container form .user-details {
     display: flex;
     flex-wrap: wrap;
@@ -82,6 +82,13 @@
 form .user-details .input-box {
     margin: 20px 0 12px 0;
     width: calc(100% / 2 -20px);
+}
+tr {
+    padding: 1rem;
+}
+
+table {
+    border-spacing: 1rem;
 }
 
 .user-details .input-box .details {
@@ -118,6 +125,10 @@ form .gender .gender-title {
     font-weight: 500;
 }
 
+.category {
+    display: flex;
+    gap: 1rem;
+}
 form .gender .category {
     display: flex;
     width: 80%;
@@ -168,4 +179,28 @@ form .button input {
     opacity: 1;
     font-size: 1;
     background: linear-gradient(135deg, #030005, #3d0863);
+}
+
+.input-file::-webkit-file-upload-button {
+    visibility: hidden;
+}
+.input-file::before {
+    content: "Select some files";
+    display: inline-block;
+    background: linear-gradient(top, #f9f9f9, #e3e3e3);
+    border: 1px solid #999;
+    border-radius: 3px;
+    padding: 5px 8px;
+    outline: none;
+    white-space: nowrap;
+    cursor: pointer;
+    text-shadow: 1px 1px #fff;
+    font-weight: 700;
+    font-size: 10pt;
+}
+.input-file:hover::before {
+    border-color: black;
+}
+.input-file:active::before {
+    background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
 }

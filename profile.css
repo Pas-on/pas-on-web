@@ -1,8 +1,16 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
 .content {
     max-width: 1080px;
     margin: 0 auto;
     background-color: aqua;
     height: 800px;
+    display: flex;
     flex-direction: column;
 }
 

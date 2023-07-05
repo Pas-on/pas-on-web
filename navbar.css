@@ -107,6 +107,7 @@ header {
 header img {
     width: 70px;
     height: auto;
+    cursor: pointer;
 }
 
 .search-bar {
@@ -242,22 +243,15 @@ nav {
 }
 
 .drop-down-profile > li {
-    padding: 1rem;
     border: 1px solid var(--brGray);
     transition: background .4s;
-}
-
-.drop-down-profile li > a {
-    color: inherit;
-    text-decoration: none;
+    padding: 1rem;
+    cursor: pointer;
 }
 
 .drop-down-profile >  li:hover {
     background-color: var(--bg-hover);
 }
-
-
-
 
 .profile:hover .drop-down-profile {
     opacity: 1;

@@ -26,7 +26,7 @@
                 <i class="fa-solid fa-lg fa-magnifying-glass" style="color: white"></i>
             </div>
         </div>
-         
+
         <nav>
             <i class="fa-solid fa-basket-shopping fa-xl"></i>
             <i class="fa-solid fa-heart wishlist-icon fa-xl"></i>
@@ -36,20 +36,20 @@
                 <ul class="drop-down-profile">
                     <div class="arrow"></div>
                     <li onclick="location.href='profile.html'">
-                            profile
+                        profile
                     </li>
                     <li onclick="location.href='login.html'">
                         log out
                     </li>
                 </ul>
-            </div>    
+            </div>
         </nav>
-        
+
         <nav class="nav-mobile">
             <i class="fa-solid fa-lg fa-magnifying-glass"></i>
             <i class="fa-solid fa-basket-shopping fa-xl"></i>
         </nav>
-        
+
     </header>
     <div class="drawer" id="drawer">
         <div>
@@ -71,7 +71,7 @@
             <p>log out</p>
         </div>
     </div>
-    
+
     <div class="content">
         <div class="pb">
             Profil Saya <br>
@@ -79,49 +79,72 @@
         </div>
         <div class="isi">
             <div class="user-details">
-                <div class="input-box">
-                    <span class="details">Username</span>
-                    <input type="text" placeholder="Masukkan Username Anda" required>
-                </div>
-                <div class="input-box">
-                    <span class="details">Nama</span>
-                    <input type="text" placeholder="Masukkan Nama Anda" required>
-                </div>
-                <div class="input-box">
-                    <span class="details">Email</span>
-                    <input type="text" placeholder="Masukkan Email Anda" required>
-                </div>
-                <div class="input-box">
-                    <span class="details">Nomor Telepon</span>
-                    <input type="text" placeholder="Masukkan Nomor Telepon Anda" required>
-                </div>
-                <div class="input-box">
-                    <span class="details">Tanggal Lahir</span>
-                    <input type="text" placeholder="Masukkan Tanggal Lahir Anda" required>
-                </div>
-                <div class="gender">
-                    <input type="radio" name="gender" id="dot-1">
-                    <input type="radio" name="gender" id="dot-2">
-                    <input type="radio" name="gender" id="dot-3">
-                    <span class="gender-title">Gender</span>
-                    <div class="category">
-                        <label for="dot-1">
-                            <span class="dot one"></span>
-                            <span class="gender">Male</span>
-                        </label>
-                        <label for="dot-2">
-                            <span class="dot two"></span>
-                            <span class="gender">Female</span>
-                        </label>
-                        <label for="dot-3">
-                            <span class="dot three"></span>
-                            <span class="gender">Lainnya</span>
-                        </label>
-                    </div>
-                </div>
-                <div class="button">
-                    <input type="Submit" value="Submit">
-                </div>
+                <table>
+                    <tr>
+                        <div class="input-box">
+                            <td><span class="details">Username</span></td>
+                            <td><input type="text" placeholder="Masukkan Username Anda" required></td>
+                        </div>
+                    </tr>
+                    <tr>
+                        <div class="input-box">
+                            <td><span class="details">Nama</span></td>
+                            <td><input type="text" placeholder="Masukkan Nama Anda" required></td>
+                        </div>
+                    </tr>
+                    <tr>
+                        <div class="input-box">
+                            <td><span class="details">Email</span></td>
+                            <td><input type="text" placeholder="Masukkan Email Anda" required></td>
+                        </div>
+                    </tr>
+                    <tr>
+                        <div class="input-box">
+                            <td><span class="details">Nomor Telepon</span></td>
+                            <td><input type="text" placeholder="Masukkan Nomor Telepon Anda" required></td>
+                        </div>
+                    </tr>
+                    <tr>
+                        <div class="input-box">
+                            <td><span class="details">Tanggal Lahir</span></td>
+                            <td><input type="text" placeholder="Masukkan Tanggal Lahir Anda" required></td>
+                        </div>
+                    </tr>
+                    <tr>
+                            <td><span class="gender-title">Gender</span></td>
+                            <td>
+                                <div class="gender">
+                                    <input type="radio" name="gender" id="dot-1">
+                                    <input type="radio" name="gender" id="dot-2">
+                                    <input type="radio" name="gender" id="dot-3">
+                                
+                                <div class="category">
+                                    <label for="dot-1">
+                                        <span class="dot one"></span>
+                                        <span class="gender">Male</span>
+                                    </label>
+                                    <label for="dot-2">
+                                        <span class="dot two"></span>
+                                        <span class="gender">Female</span>
+                                    </label>
+                                    <label for="dot-3">
+                                        <span class="dot three"></span>
+                                        <span class="gender">Lainnya</span>
+                                    </label>
+                                </div>
+                                </div>
+                            </td>
+                        
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <div class="button">
+                                <input type="Submit" value="Submit">
+                            </div>
+                        </td>
+                    </tr>
+                </table>
             </div>
             <div class="foto">
                 <img src="./assets/jokowi.jpeg" alt="profile-picture">

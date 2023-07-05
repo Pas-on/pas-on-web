@@ -75,15 +75,18 @@
 
     <div class="content">
         <div class="pb">
+            <h3>
             Profil Saya <br>
             Kelola informasi profil Anda untuk mengontrol, melindungi dan mengamankan akun
+        </h3>
         </div>
         <div class="isi">
             <div class="user-details">
+                <form action="">
                 <table>
                     <tr>
                         <td><span class="details">Username</span></td>
-                        <td><input type="text" placeholder="Masukkan Username Anda" required></td>
+                        <td><input type="text" placeholder="Masukkan Username Anda" required name="username"></td>
 
                     </tr>
                     <tr>
@@ -144,10 +147,11 @@
                         </td>
                     </tr>
                 </table>
+            </form>
             </div>
             <div class="foto">
-                <img src="./assets/jokowi.jpeg" alt="profile-picture">
-                <input type="file" class="input-file">
+                <img src="./assets/jokowi.jpeg" alt="profile-picture" id="profile-picture">
+                <input type="file" class="input-file"  accept="image/*">
             </div>
         </div>
 

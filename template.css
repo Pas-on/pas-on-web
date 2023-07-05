@@ -83,3 +83,19 @@ hr {
     margin-top: 2rem;
     border: 1.2px solid var(--brGray);
 }
+
+@media(prefers-reduce-motion) {
+    .elHidden {
+        transition: none;
+    }
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        transform: translateX(0);
+    }
+}

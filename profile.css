@@ -8,8 +8,10 @@
 .content {
     max-width: 1080px;
     margin: 0 auto;
-    background-color: aqua;
     display: flex;
+    margin-top: 1rem;
+    align-items: center;
+    justify-content: center;
     flex-direction: column;
 }
 

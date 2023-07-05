@@ -45,13 +45,13 @@ button.addEventListener("change", () => {
     }
 })
 
-
 // on scroll animation
 const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
+            console.log("intesecting")
             entry.target.style.animation = "var(--fade-in-animation)"
-        }
+        } 
     })
 })
 

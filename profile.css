@@ -22,8 +22,9 @@
 
 .isi .user-details {
     /* width : 800px; */
-    /* padding-top: 1rem; */
-    background-color: #fffafa;
+
+    background-color: black;
+    float: left;
     flex: 2;
     color: black;
     gap: 1rem;
@@ -155,6 +156,8 @@ form input [type="radio"] {
 form .button {
     height: 45px;
     margin: 45px 0;
+    width: 100px;
+    opacity: 1;
 }
 form .button input {
     height: 100%;
@@ -162,6 +165,7 @@ form .button input {
     outline: none;
     color: #fff;
     border: none;
+    opacity: 1;
     font-size: 1;
     background: linear-gradient(135deg, #030005, #3d0863);
 }

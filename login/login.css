@@ -90,7 +90,6 @@ input:focus-within {
 }
 
 .loginForm button {
-    margin-top: 2rem;
     border-radius: 100vw;
     padding-inline: 1.2rem;
     padding-block: 0.5rem;
@@ -112,6 +111,20 @@ input:focus-within {
 
 #eye-icon {
     cursor: pointer;
+}
+
+.error-box {
+    display: none;
+    color: #58151c;
+    align-self: flex-start;
+    border: 1px solid #f1aeb5;
+    background: #f8d7d9;
+    width: 100%;
+    padding: 0.5rem;
+}
+
+.error-box.show {
+    display: block;
 }
 
 .registerBox {

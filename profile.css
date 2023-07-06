@@ -1,3 +1,10 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
 .content {
     max-width: 1080px;
     margin: 0 auto;
@@ -187,4 +194,9 @@ form .button input{
   }
   .input-file:active::before {
     background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
+  }
+
+  .foto{
+    max-width: 500px;
+    max-height: 500px;
   }

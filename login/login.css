@@ -11,6 +11,7 @@ main {
     place-items: center;
     padding: 2rem;
     background-image: url("../assets/jisca-lucia-I6FPWd-fi6o-unsplash.jpg");
+    background-repeat: no-repeat;
     background-size: cover;
 }
 
@@ -21,18 +22,27 @@ main {
 
 form {
     flex: 1;
-
 }
 
 .loginForm {
     display: flex;
     height: 100vh;
     margin: 0 auto;
-    width: min(90%,400px);
+    width: min(90%, 400px);
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 2rem;
+    animation: 1s fade-in ease;
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 .loginForm h1 {
@@ -42,18 +52,18 @@ form {
 .inputForm {
     display: flex;
     width: 100%;
+    position: relative;
     flex-direction: column;
-    gap: .3rem;
+    gap: 0.3rem;
 }
-
 
 .inputForm label {
     font-size: large;
     color: #b8b6b6;
-    transition: color .5s ;
+    transition: color 0.5s;
 }
 
-label:has(+ input:focus ){
+label:has(~ input:focus) {
     color: black;
 }
 
@@ -61,7 +71,14 @@ label:has(+ input:focus ){
     border: none;
     background: none;
     border-bottom: 2px solid #b8b6b6;
-    transition: border .3s ;
+    transition: border 0.3s;
+    padding-right: 2rem;
+}
+
+.inputForm i {
+    position: absolute;
+    right: 0;
+    bottom: 10px;
 }
 
 input:focus {
@@ -76,36 +93,39 @@ input:focus-within {
     margin-top: 2rem;
     border-radius: 100vw;
     padding-inline: 1.2rem;
-    padding-block: .5rem;
+    padding-block: 0.5rem;
     font-weight: 700;
     width: 100%;
-    border: 1px solid hsl(136, 28%, 21%) ;
+    border: 1px solid hsl(136, 28%, 21%);
     background: #539165;
     color: #f5f5f5;
     cursor: pointer;
     text-transform: capitalize;
-    transition: filter .4s;
+    transition: filter 0.4s;
 }
 
 .loginForm button:hover,
 .loginForm button:focus {
     outline: none;
-    filter:brightness(0.9) ;
+    filter: brightness(0.9);
 }
 
+#eye-icon {
+    cursor: pointer;
+}
 
 .registerBox {
     display: flex;
-    gap:.2rem;
+    gap: 0.2rem;
 }
 
 .divider {
     width: 100%;
     display: flex;
     align-items: center;
-    justify-content:center ;
+    justify-content: center;
     color: #b8b6b6;
-    gap: .4rem;
+    gap: 0.4rem;
 }
 
 .divider::before,
@@ -116,37 +136,39 @@ input:focus-within {
     background: #b8b6b6;
 }
 
-.registerBox a, a:link, a:visited {
-  color: var(--green);
-  text-decoration: none;
-  position: relative;
-  outline: none;
+.registerBox a,
+a:link,
+a:visited {
+    color: var(--green);
+    text-decoration: none;
+    position: relative;
+    outline: none;
 }
 .registerBox a::before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  top: 0;
-  bottom: 0;
-  background-image: linear-gradient(90deg, var(--green), var(--green)); /* underline color */
-  background-size: 0 2px; /* vertical size of underline */
-  background-repeat: no-repeat;
-  background-position: left bottom; /* start position of underline */
-  transition: background-size .3s ease-in; /* duration and timing style of animation */
+    content: "";
+    position: absolute;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    background-image: linear-gradient(90deg, var(--green), var(--green)); /* underline color */
+    background-size: 0 2px; /* vertical size of underline */
+    background-repeat: no-repeat;
+    background-position: left bottom; /* start position of underline */
+    transition: background-size 0.3s ease-in; /* duration and timing style of animation */
 }
 
 .registerBox a:hover::before,
 .registerBox a:focus::before {
-  background-size: 100% 2px;
+    background-size: 100% 2px;
 }
 
-@media (max-width:768px) {
+@media (max-width: 768px) {
     main {
         flex-direction: column;
     }
 
     .image-wrapper {
-        flex:4 ;
+        flex: 4;
     }
     .loginForm {
         flex: 1;

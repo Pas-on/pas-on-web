@@ -32,7 +32,6 @@ const meatLeftButton = document.getElementById("meat-left-button")
 const meatRightButton = document.getElementById("meat-right-button")
 new ProductSlider(meatItemsWrapper, meatLeftButton, meatRightButton)
 
-
 //drawer logic
 button.addEventListener("change", () => {
     if (button.checked) {
@@ -51,7 +50,7 @@ const observer = new IntersectionObserver(entries => {
         if (entry.isIntersecting) {
             console.log("intesecting")
             entry.target.style.animation = "var(--fade-in-animation)"
-        } 
+        }
     })
 })
 

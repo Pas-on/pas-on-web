@@ -6,19 +6,18 @@ main {
 
 .image-wrapper {
     flex: 1;
-    filter: blur(1px);
     display: grid;
     place-items: center;
     padding: 2rem;
-    background-image: url("../assets/jisca-lucia-I6FPWd-fi6o-unsplash.jpg");
+    background-image: url(../assets/loginBg.png);
     background-repeat: no-repeat;
     background-size: cover;
 }
 
-.image-wrapper h2 {
+/* .image-wrapper h2 {
     font-size: x-large;
     text-align: center;
-}
+} */
 
 form {
     flex: 1;
@@ -63,7 +62,7 @@ form {
     transition: color 0.5s;
 }
 
-label:has(~ input:focus) {
+label:has(+ input:focus) {
     color: black;
 }
 

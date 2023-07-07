@@ -4,14 +4,25 @@ main {
     gap: 1rem;
 }
 
-.image-wrapper {
+.left {
     flex: 1;
-    display: grid;
-    place-items: center;
-    padding: 2rem;
     background-image: url(../assets/loginBg.png);
     background-repeat: no-repeat;
     background-size: cover;
+    display: flex;
+    width: min(80%, 500px);
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.image-wrapper {
+    height: 250px;
+    width: 100px;
+}
+
+.image-wrapper img {
+    object-fit: cover;
 }
 
 /* .image-wrapper h2 {

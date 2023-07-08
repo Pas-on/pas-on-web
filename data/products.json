@@ -1,0 +1,18 @@
+[
+    {
+        "id": 1,
+        "title": "aneka sayuran",
+        "price": 150000,
+        "size": "700gr",
+        "category": "new",
+        "image": "/aneka_sayuran-removebg-preview.png"
+    },
+    {
+        "id": 2,
+        "title": "bawang putih jepang",
+        "price": 70000,
+        "size": "350gr",
+        "category": "new",
+        "image": "/bawang_putih-removebg-preview.png"
+    }
+]

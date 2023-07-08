@@ -39,7 +39,7 @@
     --hamburger-margin: 8px;
     --animation-timing: 200ms ease-in-out;
     --hamburger-height: calc(var(--bar-height) * 2 + var(--mid-height) + var(--hamburger-gap) * 2);
-    --fade-in-animation: 0.4s ease fade-in;
+    --fade-in-animation: 0.4s cubic-bezier(0, 0, 0.3, 1) forwards fade-in;
 }
 
 body {

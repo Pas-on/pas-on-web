@@ -121,7 +121,6 @@
     flex-direction: column;
     border-radius: 8px;
     gap: 0.2rem;
-
     border: 2px solid rgba(3, 3, 3, 0.046);
     flex: 0 0 calc(100% / var(--max-item) - 1rem);
     font-size: clamp(0.5rem, 1.7vw, 1rem);
@@ -132,10 +131,12 @@
     position: relative;
     display: grid;
     background: hsla(0, 0%, 73%, 0.184);
-    border: 1px solid var(--brGray);
-    border-radius: inherit;
+    border: 0.2px solid var(--brGray);
+    border-top-left-radius: inherit;
+    border-top-right-radius: inherit;
     place-items: center;
     width: 100%;
+    margin: 0 auto;
     overflow: hidden;
     padding: 2rem;
     flex: 3;
@@ -143,12 +144,11 @@
 
 .image-wrapper img {
     width: min(100%, 250px);
-    vertical-align: middle;
 }
 
 .product-desc {
     display: flex;
-    padding: 0.2rem;
+    padding: 0.5rem;
     width: 100%;
     flex: 1 1 0;
     flex-direction: column;
@@ -161,7 +161,7 @@
 }
 
 .product-title {
-    font-size: clamp(0.5rem, 2vw, 1rem);
+    font-size: clamp(0.6rem, 3vw, 1rem);
     line-height: 1.5;
     white-space: normal;
     word-break: keep-all;
@@ -183,12 +183,6 @@
     font-size: smaller;
 }
 
-/* .product-seller {
-    font-size: smaller;
-    color: var(--textGray);
-    margin-top: auto;
-} */
-
 .product-cart-button {
     width: 60%;
     margin-block: 1rem;
@@ -199,6 +193,12 @@
     background: hsl(151, 69%, 92%);
     border: 1px solid hsl(150, 86%, 57%);
     color: hsl(150, 94%, 14%);
+    cursor: pointer;
+    transition: background 0.4s;
+}
+
+.product-cart-button:hover {
+    background: hsl(150, 82%, 78%);
 }
 
 .product-slider:hover .button:not(.hidden) {
@@ -241,6 +241,12 @@
     cursor: pointer;
 }
 
+@media (max-width: 1040px) {
+    .product-slider {
+        --max-item: 3;
+    }
+}
+
 @media (max-width: 768px) {
     .search-bar,
     nav:not(.nav-mobile) {
@@ -258,23 +264,6 @@
     header img {
         width: 50px;
     }
-
-    .hamburger {
-        display: flex;
-    }
-    .product-slider {
-        --max-item: 2;
-    }
-}
-
-@media (max-width: 480px) {
-    .container {
-        gap: 0.5rem;
-    }
-    .section-header {
-        font-size: large;
-    }
-
     .item-container {
         overflow-x: auto;
     }
@@ -308,5 +297,26 @@
     .slide img {
         opacity: 1;
         height: auto;
+    }
+    .hamburger {
+        display: flex;
+    }
+    .product-slider {
+        --max-item: 2;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        gap: 0.5rem;
+    }
+    .section-header {
+        font-size: large;
+    }
+}
+
+@media (max-width: 425px) {
+    .product-slider {
+        --max-item: 1;
     }
 }

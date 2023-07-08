@@ -21,6 +21,8 @@ const errorText = "user atau password salah"
 const submitButton = document.querySelector("button")
 const spinner = document.createElement("i")
 spinner.classList.add("fa", "fa-spinner", "fa-spin")
+//set to local storage
+const userData = localStorage.getItem("users") ? JSON.parse(localStorage.getItem("users")) : localStorage.setItem("users", JSON.stringify(users))
 
 const fakeLoading = () => {
     submitButton.innerText = ""
@@ -37,7 +39,7 @@ const addErrorText = () => {
 form.addEventListener("submit", e => {
     e.preventDefault()
     const { name, password } = e.target.elements
-    const findUser = users.find(user => user.name === name.value)
+    const findUser = userData.find(user => user.name === name.value)
     if (!findUser) {
         fakeLoading()
         setTimeout(addErrorText, 500)

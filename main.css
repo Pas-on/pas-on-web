@@ -256,9 +256,6 @@
         display: flex;
     }
 
-    header img {
-        width: 50px;
-    }
     .item-container {
         overflow-x: auto;
     }

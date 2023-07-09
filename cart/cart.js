@@ -20,10 +20,10 @@ const injectCartProduct = () => {
             <div class="product-desc">
                 <p class="product-title">${product.title}</p>
                 <p class="product-weight">~${product.size}</p>
-                <p class="product-price">${new Intl.NumberFormat("id-ID", {
-                    style: "currency",
-                    currency: "IDR",
-                }).format(product.price)}</p>
+                <p class="product-price" data-value=${product.price} >${new Intl.NumberFormat("id-ID", {
+                style: "currency",
+                currency: "IDR",
+            }).format(product.price)}</p>
             </div>
             </div>
             <div class="product-action">
@@ -47,8 +47,33 @@ const injectCartProduct = () => {
     }
 }
 
-injectCartProduct()
+const updateSummary = () => {
+    const productPrice = document.querySelectorAll(".product-price")
+    const productQty = document.querySelectorAll('input[type="number"]')
+    const summaryPrice = document.querySelectorAll(".summaryPrice")
+    const summaryProducts = []
+    productPrice.forEach((product, index) => {
+        const price = product.dataset.value
+        const quantity = productQty[index].value
 
+        const productObj = {
+            price,
+            quantity,
+        }
+
+        summaryProducts.push(productObj)
+    })
+    const totalPrice = summaryProducts.reduce((prev, cur) => prev + Number(cur.price) * Number(cur.quantity), 0)
+    summaryPrice.forEach(e => {
+        e.innerHTML = new Intl.NumberFormat("id-ID", {
+            style: "currency",
+            currency: "IDR",
+        }).format(totalPrice)
+    })
+}
+
+injectCartProduct()
+updateSummary()
 const trashButton = document.querySelectorAll(".fa-trash")
 trashButton.forEach(button => {
     button.addEventListener("click", e => {
@@ -56,5 +81,13 @@ trashButton.forEach(button => {
         const updatedCart = cartProduct.filter(item => item !== button.dataset.id)
         setCartItem(updatedCart)
         injectCartProduct()
+        updateSummary()
+    })
+})
+
+const inputs = document.querySelectorAll('input[type="number"]')
+inputs.forEach(input => {
+    input.addEventListener("change", () => {
+        updateSummary()
     })
 })

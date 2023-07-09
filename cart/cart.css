@@ -42,6 +42,7 @@
     height: fit-content;
     justify-content: flex-start;
     border-bottom: 1px solid gray;
+    animation: var(--fade-in-animation);
 }
 
 .product-wrapper {
@@ -128,6 +129,7 @@
     margin: 1rem;
     border: 1px solid gray;
     border-radius: 16px;
+    animation: 0.4s ease forwards fade;
 }
 
 .cart-action > div {
@@ -176,5 +178,14 @@ input[type="number"] {
 @media (max-width: 320px) {
     .product-counter input {
         width: 1rem;
+    }
+}
+
+@keyframes fade {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
     }
 }

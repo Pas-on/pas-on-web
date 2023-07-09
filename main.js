@@ -1,6 +1,7 @@
 import { ProductSlider } from "./slider.js"
 import products from "./data/products.json" assert { type: "json" }
-import { getWishlistItem, setWishlistItem } from "./utils/wishlistHelper.js"
+import { getWishlistItem, setWishlistItem } from "./helpers/wishlistHelper.js"
+import injectProduct from "./helpers/injectProduct.js"
 const crButtons = document.querySelectorAll("[data-cr-button]")
 
 const button = document.getElementById("hamburger-button")
@@ -35,29 +36,10 @@ new ProductSlider(meatItemsWrapper, meatLeftButton, meatRightButton)
 // sayuran-product-slider
 const sayuranItemsWrapper = document.getElementById("sayuran-items")
 const sayuranItemsContainer = sayuranItemsWrapper.querySelector(".item-container")
-products.forEach(product => {
-    const child = document.createElement("div")
-    child.classList.add("slider-item", "elHidden")
-    child.innerHTML = `<div class="image-wrapper">
-    <img src="assets/${product.image}" alt="sayuran" loading="lazy" />
-    <div class="product-action ">
-        <i class="fa-solid  fa-heart wishlist fa-xl" data-id=${product.id}></i>
-    </div>
-</div>
-<div class="product-desc">
-    <div>
-        <p class="product-price">${new Intl.NumberFormat("id-ID", {
-            style: "currency",
-            currency: "IDR",
-        }).format(product.price)}</p>
-        <p class="product-weight">~${product.size}</p>
-    </div>
-    <span class="product-title"> ${product.title} </span>
-</div>
-<button class="product-cart-button" data-id=${product.id} >add to cart</button>
-`
-    sayuranItemsContainer.appendChild(child)
-})
+const sayuranLeftButton = document.getElementById("sayuran-left-button")
+const sayuranRightButton = document.getElementById("sayuran-right-button")
+injectProduct("sayuran", sayuranItemsContainer)
+new ProductSlider(sayuranItemsWrapper, sayuranLeftButton, sayuranRightButton)
 
 //drawer logic
 button.addEventListener("change", () => {

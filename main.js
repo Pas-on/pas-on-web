@@ -1,17 +1,9 @@
-const carouselItems = document.querySelector(".slide")
+import { ProductSlider } from "./slider.js"
+import { getWishlistItem, setWishlistItem } from "./helpers/wishlistHelper.js"
+import injectProduct from "./helpers/injectProduct.js"
 const crButtons = document.querySelectorAll("[data-cr-button]")
-const itemContainer = document.querySelector("#item-container")
-const slButtons = document.querySelectorAll("[data-sl-button]")
-const slItem = document.querySelector(".slider-item")
-const productSlider = document.getElementById("product-slider")
-const slLeftButton = document.getElementById("sl-left-button")
-const slRightButton = document.getElementById("sl-right-button")
-const productSliderItem = document.querySelectorAll(".slider-item")
-const button = document.getElementById("hamburger-button")
-const drawer = document.getElementById("drawer")
-const navbar = document.querySelector("header")
-//carousel logic
 
+//carousel logic
 crButtons.forEach(button => {
     button.addEventListener("click", () => {
         const offset = button.dataset.crButton === "next" ? 1 : -1
@@ -25,59 +17,77 @@ crButtons.forEach(button => {
     })
 })
 
-//product-slider
+//new-product-slider
+const newItemsWrapper = document.getElementById("new-items")
+const npLeftButton = document.getElementById("np-left-button")
+const npRightButton = document.getElementById("np-right-button")
+new ProductSlider(newItemsWrapper, npLeftButton, npRightButton)
 
-let slidePos = 0
+// meat-product-slider
+const meatItemsWrapper = document.getElementById("meat-items")
+const meatLeftButton = document.getElementById("meat-left-button")
+const meatRightButton = document.getElementById("meat-right-button")
+new ProductSlider(meatItemsWrapper, meatLeftButton, meatRightButton)
 
-const currentItemsLength = getComputedStyle(productSlider).getPropertyValue("--max-item")
+// sayuran-product-slider
+const sayuranItemsWrapper = document.getElementById("sayuran-items")
+const sayuranItemsContainer = sayuranItemsWrapper.querySelector(".item-container")
+const sayuranLeftButton = document.getElementById("sayuran-left-button")
+const sayuranRightButton = document.getElementById("sayuran-right-button")
+injectProduct("sayuran", sayuranItemsContainer)
+new ProductSlider(sayuranItemsWrapper, sayuranLeftButton, sayuranRightButton)
 
-checkBoundary()
-console.log(productSliderItem[0].offsetWidth)
-function translateSlider() {
-    checkBoundary()
+// on scroll animation
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.animation = "var(--fade-in-animation)"
+        }
+    })
+})
 
-    itemContainer.style.transform = `translateX(${slidePos}px)`
-}
+const hiddenElements = document.querySelectorAll(".elHidden")
+hiddenElements.forEach(el => observer.observe(el))
 
-function slideToNext() {
-    slLeftButton.classList.remove("hidden")
-    slidePos -= productSliderItem[0].offsetWidth * currentItemsLength
-    translateSlider()
-}
+// add-to-wishlist logic
+const wishlistButtons = document.querySelectorAll(".wishlist")
+// get wishlist item dr localStorage
+wishlistButtons.forEach(button => {
+    button.addEventListener("click", e => {
+        const wishlistItems = getWishlistItem()
+        const id = e.target.dataset.id
+        const checkId = wishlistItems.includes(id)
+        if (!checkId) {
+            wishlistItems.push(id)
+            setWishlistItem(wishlistItems)
+            button.classList.add("active")
+        } else {
+            const updatedWishlistItems = wishlistItems.filter(item => item !== id)
+            setWishlistItem(updatedWishlistItems)
+            button.classList.remove("active")
+        }
+    })
+})
 
-function slideToPrev() {
-    slidePos += productSliderItem[0].offsetWidth * currentItemsLength
-    translateSlider()
-}
+// add-to-cart logic
+const cartButtons = document.querySelectorAll(".product-cart-button")
+// get cart item dr localStorage
+const cartItems = localStorage.getItem("carts") ? JSON.parse(localStorage.getItem("carts")) : []
+cartButtons.forEach(button => {
+    button.addEventListener("click", e => {
+        const id = e.target.dataset.id
+        const checkId = cartItems.includes(id)
+        if (!checkId) {
+            cartItems.push(id)
+            localStorage.setItem("carts", JSON.stringify(cartItems))
+        }
+    })
+})
 
-function checkBoundary() {
-    if (slidePos === 0) {
-        slLeftButton.classList.add("hidden")
-    } else {
-        slLeftButton.classList.remove("hidden")
-    }
-
-    if (
-        Math.abs(slidePos) + productSliderItem[0].offsetWidth * currentItemsLength >=
-        productSliderItem[0].offsetWidth * productSliderItem.length
-    ) {
-        slRightButton.classList.add("hidden")
-    } else {
-        slRightButton.classList.remove("hidden")
-    }
-}
-
-slLeftButton.addEventListener("click", slideToPrev)
-slRightButton.addEventListener("click", slideToNext)
-
-//drawer logic
-button.addEventListener("change", () => {
-    if (button.checked) {
-        const navbarHeight = navbar.offsetHeight
-        drawer.style.top = `${navbarHeight}px`
-        drawer.style.height = `calc(100vh - ${navbarHeight}px)`
-        drawer.classList.add("open")
-    } else {
-        drawer.classList.remove("open")
-    }
+// check on load
+window.addEventListener("load", () => {
+    const wishlistItem = getWishlistItem()
+    wishlistButtons.forEach(button => {
+        wishlistItem.includes(button.dataset.id) ? button.classList.add("active") : ""
+    })
 })

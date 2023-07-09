@@ -3,39 +3,51 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="style.css" />
+        <link rel="stylesheet" href="template.css" />
+        <link rel="stylesheet" href="navbar.css" />
         <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" />
+        <link rel="stylesheet" href="main.css" />
         <script src="https://kit.fontawesome.com/aefe7f07e5.js" crossorigin="anonymous"></script>
         <title>Pas-on: marketplace groceries terbaik di indonesia</title>
-        <script src="main.js" defer></script>
+        <script type="module" src="main.js" defer></script>
+        <script src="drawer.js" defer></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
     </head>
     <body>
-        <header>
+        <header class="header">
             <div class="hamburger">
                 <label class="hamburger-menu">
                     <input type="checkbox" id="hamburger-button" />
                 </label>
             </div>
-            <img src="assets/logo.png" alt="logo" />
+            <img src="assets/logo1.png" alt="logo" onclick="location.href='index.html'" />
             <div class="search-bar">
                 <input type="text" placeholder="mau cari apa hari ini?" />
                 <div class="icon">
                     <i class="fa-solid fa-lg fa-magnifying-glass" style="color: white"></i>
                 </div>
             </div>
+
             <nav>
-                <i class="fa-solid fa-basket-shopping fa-xl"></i>
-                <i class="fa-regular fa-heart fa-xl"></i>
+                <i class="fa-solid fa-basket-shopping fa-xl" onclick="location.href='cart/index.html'"></i>
+                <i class="fa-solid fa-heart wishlist-icon fa-xl"></i>
                 <div class="vertical-line"></div>
-                <div class="profile"></div>
+                <div class="profile">
+                    <ul class="drop-down-profile">
+                        <div class="arrow"></div>
+                        <li onclick="location.href='profile.html'">profile</li>
+                        <li onclick="location.href='auth/login.html'">log out</li>
+                    </ul>
+                </div>
             </nav>
+
             <nav class="nav-mobile">
                 <i class="fa-solid fa-lg fa-magnifying-glass"></i>
-                <i class="fa-solid fa-basket-shopping fa-xl"></i>
+                <i class="fa-solid fa-basket-shopping fa-xl" onclick="location.href='cart/index.html'"></i>
             </nav>
         </header>
         <div class="drawer" id="drawer">
-            <div>
+            <div onclick="location.href='/profile.html'">
                 <div class="profile"></div>
                 <p>Jokowi</p>
             </div>
@@ -49,7 +61,7 @@
                 <p>promos</p>
                 <i class="fa-solid fa-chevron-right"></i>
             </div>
-            <div>
+            <div onclick="location.href='/auth/login.html'">
                 <i class="fa-solid fa-arrow-right-from-bracket"></i>
                 <p>log out</p>
             </div>
@@ -68,25 +80,144 @@
                 <li class="slide" data-current>
                     <img src="assets/carousel-2.png" alt="carousel-item" />
                 </li>
+                <li class="slide">
+                    <img src="assets/carousel3.png" alt="carousel-item" />
+                </li>
             </ul>
         </div>
         <main>
             <div class="container">
-                <section class="sub-item">
+                <section class="sub-item elHidden">
                     <h2 class="section-header">item baru</h2>
-
-                    <div class="product-slider" id="product-slider">
-                        <div class="button hidden" data-sl-button="prev" id="sl-left-button">
+                    <div class="product-slider" id="new-items">
+                        <div class="button left hidden" data-sl-button="prev" id="np-left-button">
                             <i class="fa-solid fa-lg fa-chevron-left"></i>
                         </div>
-                        <div class="button" data-sl-button="next" id="sl-right-button">
+                        <div class="button right" data-sl-button="next" id="np-right-button">
                             <i class="fa-solid fa-lg fa-chevron-right"></i>
                         </div>
                         <div class="item-container" id="item-container">
-                            <div class="slider-item">
+                            <div class="slider-item elHidden">
                                 <div class="image-wrapper new">
                                     <img src="assets/aneka_sayuran-removebg-preview.png" alt="sayuran" />
-                                    <div class="new-badge">new</div>
+                                    <div class="product-action">
+                                        <i class="fa-regular fa-heart fa-xl"></i>
+                                    </div>
+                                </div>
+                                <div class="product-desc">
+                                    <div>
+                                        <p class="product-price">Rp.150.000</p>
+                                        <p class="product-weight">~700gr</p>
+                                    </div>
+                                    <span class="product-title"> aneka sayuran </span>
+                                    <!-- <p class="product-seller">toko abadi</p> -->
+                                </div>
+                                <button class="product-cart-button">add to cart</button>
+                            </div>
+                            <div class="slider-item elHidden">
+                                <div class="image-wrapper new">
+                                    <div class="product-action">
+                                        <i class="fa-regular fa-heart fa-xl"></i>
+                                    </div>
+                                    <img src="assets/bawang_putih-removebg-preview.png" alt="bawang" />
+                                </div>
+                                <div class="product-desc">
+                                    <div>
+                                        <p class="product-price">Rp.70.000</p>
+                                        <p class="product-weight">~350gr</p>
+                                    </div>
+                                    <span class="product-title">bawang putih jepang</span>
+                                </div>
+                                <button class="product-cart-button">add to cart</button>
+                            </div>
+                            <div class="slider-item elHidden">
+                                <div class="image-wrapper">
+                                    <div class="product-action">
+                                        <i class="fa-regular fa-heart fa-xl"></i>
+                                    </div>
+                                    <img src="assets/beras-removebg-preview.png" alt="beras" />
+                                </div>
+                                <div class="product-desc">
+                                    <div>
+                                        <p class="product-price">Rp.150.000</p>
+                                        <p class="product-weight">10kg</p>
+                                    </div>
+                                    <span class="product-title">beras import jepang 10kg</span>
+                                </div>
+                                <button class="product-cart-button">add to cart</button>
+                            </div>
+                            <div class="slider-item elHidden">
+                                <div class="image-wrapper">
+                                    <div class="product-action">
+                                        <i class="fa-regular fa-heart fa-xl"></i>
+                                    </div>
+                                    <img src="assets/jagung-removebg-preview.png" alt="jagung" />
+                                </div>
+                                <div class="product-desc">
+                                    <div>
+                                        <p class="product-price">Rp.30.000</p>
+                                        <p class="product-weight">~500gr</p>
+                                    </div>
+                                    <span class="product-title">jagung hawai organik</span>
+                                </div>
+                                <button class="product-cart-button">add to cart</button>
+                            </div>
+                            <div class="slider-item elHidden">
+                                <div class="image-wrapper">
+                                    <div class="product-action">
+                                        <i class="fa-regular fa-heart fa-xl"></i>
+                                        <i class="fa-solid fa-basket-shopping fa-xl"></i>
+                                    </div>
+                                    <img src="assets/wagyu-removebg-preview.png" alt="wagyu a5" />
+                                </div>
+                                <div class="product-desc">
+                                    <div>
+                                        <p class="product-price">Rp.502.000</p>
+                                        <p class="product-weight">~500gr</p>
+                                    </div>
+                                    <span class="product-title"
+                                        >Wagyu Beef Sirloin Steak A5 Bliss Japanese asdhah usdiu has iudh iashi asdasdasd
+                                    </span>
+                                </div>
+                                <button class="product-cart-button">add to cart</button>
+                            </div>
+                            <div class="slider-item elHidden">
+                                <div class="image-wrapper">
+                                    <div class="product-action">
+                                        <i class="fa-regular fa-heart fa-xl"></i>
+                                        <i class="fa-solid fa-basket-shopping fa-xl"></i>
+                                    </div>
+                                    <img src="assets/peanut.png" alt="kacang" />
+                                </div>
+                                <div class="product-desc">
+                                    <div>
+                                        <p class="product-price">Rp.101.000</p>
+                                        <p class="product-weight">~500gr</p>
+                                    </div>
+                                    <span class="product-title">roasted almond</span>
+                                </div>
+                                <button class="product-cart-button">add to cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <hr />
+                <section class="sub-item elHidden">
+                    <h2 class="section-header">item baru</h2>
+                    <div class="product-slider" id="meat-items">
+                        <div class="left button hidden" data-sl-button="prev" id="meat-left-button">
+                            <i class="fa-solid fa-lg fa-chevron-left"></i>
+                        </div>
+                        <div class="right button" data-sl-button="next" id="meat-right-button">
+                            <i class="fa-solid fa-lg fa-chevron-right"></i>
+                        </div>
+                        <div class="item-container" id="item-container">
+                            <div class="slider-item elHidden">
+                                <div class="image-wrapper new">
+                                    <img src="assets/aneka_sayuran-removebg-preview.png" alt="sayuran" loading="lazy" />
+                                    <div class="product-action">
+                                        <i class="fa-regular fa-heart fa-xl"></i>
+                                    </div>
                                 </div>
                                 <div class="product-desc">
                                     <div>
@@ -97,8 +228,12 @@
                                     <p class="product-seller">toko abadi</p>
                                 </div>
                             </div>
-                            <div class="slider-item">
-                                <div class="image-wrapper">
+                            <div class="slider-item elHidden">
+                                <div class="image-wrapper new">
+                                    <div class="product-action">
+                                        <i class="fa-regular fa-heart fa-xl"></i>
+                                        <i class="fa-solid fa-basket-shopping fa-xl"></i>
+                                    </div>
                                     <img src="assets/bawang_putih-removebg-preview.png" alt="bawang" />
                                 </div>
                                 <div class="product-desc">
@@ -110,8 +245,12 @@
                                     <p class="product-seller">toko abadi</p>
                                 </div>
                             </div>
-                            <div class="slider-item">
+                            <div class="slider-item elHidden">
                                 <div class="image-wrapper">
+                                    <div class="product-action">
+                                        <i class="fa-regular fa-heart fa-xl"></i>
+                                        <i class="fa-solid fa-basket-shopping fa-xl"></i>
+                                    </div>
                                     <img src="assets/beras-removebg-preview.png" alt="beras" />
                                 </div>
                                 <div class="product-desc">
@@ -123,8 +262,12 @@
                                     <p class="product-seller">toko kelontong andi</p>
                                 </div>
                             </div>
-                            <div class="slider-item">
+                            <div class="slider-item elHidden">
                                 <div class="image-wrapper">
+                                    <div class="product-action">
+                                        <i class="fa-regular fa-heart fa-xl"></i>
+                                        <i class="fa-solid fa-basket-shopping fa-xl"></i>
+                                    </div>
                                     <img src="assets/jagung-removebg-preview.png" alt="jagung" />
                                 </div>
                                 <div class="product-desc">
@@ -136,8 +279,12 @@
                                     <p class="product-seller">toko abadi</p>
                                 </div>
                             </div>
-                            <div class="slider-item">
+                            <div class="slider-item elHidden">
                                 <div class="image-wrapper">
+                                    <div class="product-action">
+                                        <i class="fa-regular fa-heart fa-xl"></i>
+                                        <i class="fa-solid fa-basket-shopping fa-xl"></i>
+                                    </div>
                                     <img src="assets/wagyu-removebg-preview.png" alt="wagyu a5" />
                                 </div>
                                 <div class="product-desc">
@@ -149,8 +296,12 @@
                                     <p class="product-seller">toko abadi</p>
                                 </div>
                             </div>
-                            <div class="slider-item">
+                            <div class="slider-item elHidden">
                                 <div class="image-wrapper">
+                                    <div class="product-action">
+                                        <i class="fa-regular fa-heart fa-xl"></i>
+                                        <i class="fa-solid fa-basket-shopping fa-xl"></i>
+                                    </div>
                                     <img src="assets/peanut.png" alt="kacang" />
                                 </div>
                                 <div class="product-desc">
@@ -166,8 +317,17 @@
                     </div>
                 </section>
                 <hr />
-                <section class="sub-item">
-                    <h3 class="section-header">meats</h3>
+                <section class="sub-item elHidden">
+                    <h2 class="section-header">sayuran</h2>
+                    <div class="product-slider" id="sayuran-items">
+                        <div class="left button hidden" data-sl-button="prev" id="sayuran-left-button">
+                            <i class="fa-solid fa-lg fa-chevron-left"></i>
+                        </div>
+                        <div class="right button" data-sl-button="next" id="sayuran-right-button">
+                            <i class="fa-solid fa-lg fa-chevron-right"></i>
+                        </div>
+                        <div class="item-container" id="item-container"></div>
+                    </div>
                 </section>
             </div>
         </main>

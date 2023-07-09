@@ -3,13 +3,12 @@ import { getWishlistItem, setWishlistItem } from "./helpers/wishlistHelper.js"
 import injectProduct from "./helpers/injectProduct.js"
 
 // check on load
-window.addEventListener("load", () => {
-    const wishlistItem = getWishlistItem()
-    injectProduct("sayuran", sayuranItemsContainer)
 
-    wishlistButtons.forEach(button => {
-        wishlistItem.includes(button.dataset.id) ? button.classList.add("active") : ""
-    })
+const wishlistItem = getWishlistItem()
+injectProduct("sayuran", sayuranItemsContainer)
+
+wishlistButtons.forEach(button => {
+    wishlistItem.includes(button.dataset.id) ? button.classList.add("active") : ""
 })
 
 const crButtons = document.querySelectorAll("[data-cr-button]")

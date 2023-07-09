@@ -1,6 +1,6 @@
 import { ProductSlider } from "./slider.js"
-import { getWishlistItem, setWishlistItem } from "./helpers/wishlistHelper.js"
-import injectProduct from "./helpers/injectProduct.js"
+import { getWishlistItem, setWishlistItem } from "./utils/wishlistHelper.js"
+import injectProduct from "./utils/injectProduct.js"
 
 const crButtons = document.querySelectorAll("[data-cr-button]")
 

@@ -1,5 +1,5 @@
-import { getCartItem, setCartItem } from "../helpers/cartHelper.js"
-import products from "../data/products.json" assert { type: "json" }
+import { getCartItem, setCartItem } from "../utils/cartHelper.js"
+import products from "../data/products.js"
 import Counter from "./Counter.js"
 
 const productContainer = document.querySelector(".product-container")

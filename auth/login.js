@@ -14,7 +14,7 @@ eyeIcon.addEventListener("click", () => {
 })
 
 // form logic
-import users from "../data/user.json" assert { type: "json" }
+import users from "../data/user.js"
 const form = document.querySelector("form")
 const errorBox = document.querySelector(".error-box")
 const errorText = "user atau password salah"

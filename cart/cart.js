@@ -1,9 +1,7 @@
 import { getCartItem, setCartItem } from "../helpers/cartHelper.js"
-
+import products from "../data/products.json" assert { type: "json" }
 import Counter from "./Counter.js"
 
-const productsRes = await fetch("../data/products.json")
-const products = await productsRes.json()
 const productContainer = document.querySelector(".product-container")
 // get productId dari localstorage
 

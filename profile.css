@@ -1,5 +1,3 @@
-
-
 .content {
     max-width: 1080px;
     margin: 0 auto;
@@ -10,12 +8,12 @@
     flex-direction: column;
 }
 
-.content .pb{
+.content .pb {
     width: 100%;
     background-color: #fffafa;
 }
 
-.isi{
+.isi {
     width: 1080px;
     display: flex;
     padding-top: 1rem;
@@ -23,7 +21,7 @@
 
 }
 
-.isi .user-details{
+.isi .user-details {
     /* width : 800px; */
     /* padding-top: 1rem; */
     background-color: #fffafa;
@@ -35,7 +33,7 @@
     flex-direction: column;
 }
 
-.isi .foto{
+.isi .foto {
     /* width :280px; */
     flex: 1;
     background-color: #fffafa;
@@ -171,45 +169,8 @@ form .button{
 }
 form .button input{
     outline: none;
-    border: 1px solid #999;
-    border-radius: 3px;
-    padding: 5px 8px;
-    outline: none;
-    white-space: nowrap;
-    cursor: pointer;
-    /* text-shadow: 1px 1px #fff; */
-    font-size: 10pt;
-    background: #3d8361;
-    color: #fffafa;
-}
-
-.input-file::-webkit-file-upload-button {
-    visibility: hidden;
-  }
-  .input-file::before {
-    color: #fffafa;
-    content: 'Select some files';
-    display: inline-block;
-    background: #3d8361;
-    border: 1px solid #999;
-    border-radius: 3px;
-    padding: 5px 8px;
-    outline: none;
-    white-space: nowrap;
-    cursor: pointer;
-    /* text-shadow: 1px 1px #fff; */
-    /* font-weight: 100; */
-    font-size: 10pt;
-    
-  }
-  .input-file:hover::before {
-    border-color: black;
-  }
-  .input-file:active::before {
-    background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
-  }
-
-  .foto img{
-    width: min(60%,500px);
-    height: auto;
-  }
+    color: #fff;
+    border: none;
+    font-size: 1;
+    background: linear-gradient(135deg,#030005,#3D0863 ); ;
+} */

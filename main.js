@@ -39,11 +39,6 @@ injectProduct("sayuran", sayuranItemsContainer)
 
 new ProductSlider(sayuranItemsWrapper, sayuranLeftButton, sayuranRightButton)
 
-const wishlistItem = getWishlistItem()
-wishlistButtons.forEach(button => {
-    wishlistItem.includes(button.dataset.id) ? button.classList.add("active") : ""
-})
-
 // on scroll animation
 const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
@@ -74,6 +69,11 @@ wishlistButtons.forEach(button => {
             button.classList.remove("active")
         }
     })
+})
+
+const wishlistItem = getWishlistItem()
+wishlistButtons.forEach(button => {
+    wishlistItem.includes(button.dataset.id) ? button.classList.add("active") : ""
 })
 
 // add-to-cart logic

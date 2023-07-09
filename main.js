@@ -2,11 +2,6 @@ import { ProductSlider } from "./slider.js"
 import { getWishlistItem, setWishlistItem } from "./helpers/wishlistHelper.js"
 import injectProduct from "./helpers/injectProduct.js"
 
-const wishlistItem = getWishlistItem()
-wishlistButtons.forEach(button => {
-    wishlistItem.includes(button.dataset.id) ? button.classList.add("active") : ""
-})
-
 const crButtons = document.querySelectorAll("[data-cr-button]")
 
 //carousel logic
@@ -43,6 +38,11 @@ const sayuranRightButton = document.getElementById("sayuran-right-button")
 injectProduct("sayuran", sayuranItemsContainer)
 
 new ProductSlider(sayuranItemsWrapper, sayuranLeftButton, sayuranRightButton)
+
+const wishlistItem = getWishlistItem()
+wishlistButtons.forEach(button => {
+    wishlistItem.includes(button.dataset.id) ? button.classList.add("active") : ""
+})
 
 // on scroll animation
 const observer = new IntersectionObserver(entries => {

@@ -82,8 +82,7 @@ h3 {
 }
 
 hr {
-    margin-top: 2rem;
-    border: 1.2px solid var(--brGray);
+    border: 1.2px solid rgb(200, 200, 200);
 }
 
 @media (prefers-reduce-motion) {

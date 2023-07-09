@@ -1,12 +1,12 @@
 import { ProductSlider } from "./slider.js"
 import products from "./data/products.json" assert { type: "json" }
+import { getWishlistItem, setWishlistItem } from "./utils/wishlistHelper.js"
 const crButtons = document.querySelectorAll("[data-cr-button]")
 
 const button = document.getElementById("hamburger-button")
 const drawer = document.getElementById("drawer")
 const navbar = document.querySelector("header")
 //carousel logic
-
 crButtons.forEach(button => {
     button.addEventListener("click", () => {
         const offset = button.dataset.crButton === "next" ? 1 : -1
@@ -38,10 +38,10 @@ const sayuranItemsContainer = sayuranItemsWrapper.querySelector(".item-container
 products.forEach(product => {
     const child = document.createElement("div")
     child.classList.add("slider-item", "elHidden")
-    child.innerHTML = `<div class="image-wrapper new">
+    child.innerHTML = `<div class="image-wrapper">
     <img src="assets/${product.image}" alt="sayuran" loading="lazy" />
     <div class="product-action ">
-        <i class="fa-solid fa-heart wishlist fa-xl" data-id=${product.id}></i>
+        <i class="fa-solid  fa-heart wishlist fa-xl" data-id=${product.id}></i>
     </div>
 </div>
 <div class="product-desc">
@@ -88,16 +88,16 @@ const wishlistButtons = document.querySelectorAll(".wishlist")
 // get wishlist item dr localStorage
 wishlistButtons.forEach(button => {
     button.addEventListener("click", e => {
-        const wishlistItems = localStorage.getItem("wishlists") ? JSON.parse(localStorage.getItem("wishlists")) : []
+        const wishlistItems = getWishlistItem()
         const id = e.target.dataset.id
         const checkId = wishlistItems.includes(id)
         if (!checkId) {
             wishlistItems.push(id)
-            localStorage.setItem("wishlists", JSON.stringify(wishlistItems))
+            setWishlistItem(wishlistItems)
             button.classList.add("active")
         } else {
             const updatedWishlistItems = wishlistItems.filter(item => item !== id)
-            localStorage.setItem("wishlists", JSON.stringify(updatedWishlistItems))
+            setWishlistItem(updatedWishlistItems)
             button.classList.remove("active")
         }
     })
@@ -105,7 +105,6 @@ wishlistButtons.forEach(button => {
 
 // add-to-cart logic
 const cartButtons = document.querySelectorAll(".product-cart-button")
-
 // get cart item dr localStorage
 const cartItems = localStorage.getItem("carts") ? JSON.parse(localStorage.getItem("carts")) : []
 cartButtons.forEach(button => {
@@ -116,5 +115,13 @@ cartButtons.forEach(button => {
             cartItems.push(id)
             localStorage.setItem("carts", JSON.stringify(cartItems))
         }
+    })
+})
+
+// check on load
+window.addEventListener("load", () => {
+    const wishlistItem = getWishlistItem()
+    wishlistButtons.forEach(button => {
+        wishlistItem.includes(button.dataset.id) ? button.classList.add("active") : ""
     })
 })

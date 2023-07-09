@@ -233,7 +233,7 @@
 }
 
 .wishlist.active {
-    color: red;
+    color: #cd1818;
 }
 
 @media (max-width: 1040px) {

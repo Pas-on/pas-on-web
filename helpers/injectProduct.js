@@ -1,5 +1,5 @@
-import products from "../data/products.json" assert { type: "json" }
-
+const productsRes = await fetch("../data/products.json")
+const products = await productsRes.json()
 const injectProduct = (category, productContainer) => {
     const filteredProduct = products.filter(product => product.category === category)
     filteredProduct.forEach(product => {

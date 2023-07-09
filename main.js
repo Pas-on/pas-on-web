@@ -1,6 +1,17 @@
 import { ProductSlider } from "./slider.js"
 import { getWishlistItem, setWishlistItem } from "./helpers/wishlistHelper.js"
 import injectProduct from "./helpers/injectProduct.js"
+
+// check on load
+window.addEventListener("load", () => {
+    const wishlistItem = getWishlistItem()
+    injectProduct("sayuran", sayuranItemsContainer)
+
+    wishlistButtons.forEach(button => {
+        wishlistItem.includes(button.dataset.id) ? button.classList.add("active") : ""
+    })
+})
+
 const crButtons = document.querySelectorAll("[data-cr-button]")
 
 //carousel logic
@@ -34,7 +45,6 @@ const sayuranItemsWrapper = document.getElementById("sayuran-items")
 const sayuranItemsContainer = sayuranItemsWrapper.querySelector(".item-container")
 const sayuranLeftButton = document.getElementById("sayuran-left-button")
 const sayuranRightButton = document.getElementById("sayuran-right-button")
-injectProduct("sayuran", sayuranItemsContainer)
 new ProductSlider(sayuranItemsWrapper, sayuranLeftButton, sayuranRightButton)
 
 // on scroll animation
@@ -81,13 +91,5 @@ cartButtons.forEach(button => {
             cartItems.push(id)
             localStorage.setItem("carts", JSON.stringify(cartItems))
         }
-    })
-})
-
-// check on load
-window.addEventListener("load", () => {
-    const wishlistItem = getWishlistItem()
-    wishlistButtons.forEach(button => {
-        wishlistItem.includes(button.dataset.id) ? button.classList.add("active") : ""
     })
 })

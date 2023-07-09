@@ -72,8 +72,11 @@ const updateSummary = () => {
     })
 }
 
-injectCartProduct()
-updateSummary()
+window.addEventListener("load", () => {
+    injectCartProduct()
+    updateSummary()
+})
+
 const trashButton = document.querySelectorAll(".fa-trash")
 trashButton.forEach(button => {
     button.addEventListener("click", e => {

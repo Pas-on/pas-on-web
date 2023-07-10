@@ -4,10 +4,13 @@ const injectProduct = (category, productContainer) => {
     const filteredProduct = products.filter(product => product.category === category)
     filteredProduct.forEach(product => {
         const child = document.createElement("div")
+        child.onclick = () => {
+            location.href = `/detail/index.html?id=${product.id}`
+        }
         child.classList.add("slider-item", "elHidden")
         child.innerHTML = `<div class="image-wrapper">
         <img src="assets${product.image}" alt="sayuran" loading="lazy" />
-        <div class="product-action ">
+        <div class="product-action">
             <i class="fa-solid  fa-heart wishlist fa-xl" data-id=${product.id}></i>
         </div>
     </div>

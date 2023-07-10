@@ -13,7 +13,6 @@
 
 .product-item {
     display: flex;
-
     position: relative;
     flex-direction: column;
     border-radius: 8px;

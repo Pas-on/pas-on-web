@@ -5,11 +5,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="../template.css" />
         <link rel="stylesheet" href="../navbar.css" />
-        <link rel="shortcut icon" href="../assets/favicon.ico" type="image/x-icon" />
+        <link rel="stylesheet" href="style.css" />
+        <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" />
         <script src="https://kit.fontawesome.com/aefe7f07e5.js" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="cart.css" />
-        <script src="cart.js" defer type="module"></script>
+        <title>Pas-on: marketplace groceries terbaik di indonesia</title>
+        <script src="../search.js" defer type="module"></script>
+        <script src="./main.js" defer type="module"></script>
         <script src="../drawer.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.3.0/color-thief.umd.js"></script>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.4/dist/sweetalert2.min.css" />
     </head>
     <body>
@@ -77,33 +80,10 @@
                 <p>log out</p>
             </div>
         </div>
+
         <main>
             <div class="container">
-                <h1>cart</h1>
-                <hr />
-                <div class="cart-wrapper">
-                    <div class="product-container"></div>
-                    <div class="cart-action">
-                        <h2>ringkasan belanja</h2>
-                        <div>
-                            <p>total harga</p>
-                            <p class="summaryPrice"></p>
-                        </div>
-                        <hr />
-                        <div>
-                            <p class="text-bold">total harga</p>
-                            <p class="text-bold summaryPrice"></p>
-                        </div>
-                        <button class="cart-payment">bayar</button>
-                    </div>
-                </div>
-            </div>
-            <div class="cart-action-mobile">
-                <div>
-                    <p class="text-bold">total harga</p>
-                    <p class="text-bold summaryPrice"></p>
-                </div>
-                <button class="cart-payment">bayar</button>
+                <div class="product-container"></div>
             </div>
         </main>
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.4/dist/sweetalert2.min.js"></script>

@@ -72,3 +72,45 @@ const wishlistItem = getWishlistItem()
 wishlistButtons.forEach(button => {
     wishlistItem.includes(button.dataset.id) ? button.classList.add("active") : ""
 })
+
+// add-to-cart logic
+const cartButtons = document.querySelectorAll(".product-cart-button")
+// get cart item dr localStorage
+const cartItems = localStorage.getItem("carts") ? JSON.parse(localStorage.getItem("carts")) : []
+
+cartButtons.forEach(button => {
+    const productId = button.dataset.id
+
+    // Check if the current product is in the cart items
+    if (cartItems.includes(productId)) {
+        button.innerText = "added"
+    }
+})
+
+cartButtons.forEach(button => {
+    button.addEventListener("click", e => {
+        e.stopPropagation()
+        const id = e.target.dataset.id
+        const checkId = cartItems.includes(id)
+        if (!checkId) {
+            cartItems.push(id)
+            localStorage.setItem("carts", JSON.stringify(cartItems))
+            const Toast = Swal.mixin({
+                toast: true,
+                position: "top-right",
+                iconColor: "white",
+                customClass: {
+                    popup: "colored-toast",
+                },
+                showConfirmButton: false,
+                timer: 1500,
+                timerProgressBar: true,
+            })
+            Toast.fire({
+                icon: "success",
+                title: "success add to cart",
+            })
+            button.innerText = "added"
+        }
+    })
+})

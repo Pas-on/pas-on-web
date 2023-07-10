@@ -216,17 +216,13 @@
 }
 
 .product-action {
-    z-index: 5;
+    z-index: 3;
     opacity: 1;
     position: absolute;
     top: 2px;
     padding-top: 0.3rem;
     right: 0;
     padding-inline: 0.3rem;
-}
-
-.colored-toast.swal2-icon-success {
-    background-color: #a5dc86 !important;
 }
 
 .product-action > i {

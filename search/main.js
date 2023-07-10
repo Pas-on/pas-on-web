@@ -46,7 +46,7 @@ const observer = new IntersectionObserver(entries => {
 })
 
 const hiddenElements = document.querySelectorAll(".product-item")
-console.log(hiddenElements)
+
 hiddenElements.forEach(el => observer.observe(el))
 
 const wishlistButtons = document.querySelectorAll(".wishlist")

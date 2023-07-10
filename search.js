@@ -89,6 +89,5 @@ searchIcon.addEventListener("click", () => {
 const popAction = document.querySelector(".profile")
 const dropDown = document.querySelector(".drop-down-profile")
 popAction.addEventListener("click", () => {
-    console.log(popAction)
     dropDown.classList.toggle("active")
 })

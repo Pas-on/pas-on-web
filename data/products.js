@@ -238,8 +238,7 @@ const products = [
         "size": "1L",
         "category": "Susu",
         "image": "/Foto Project/Susu/ultramilk_full_cream-removebg-preview.png",
-    }
-
+    },
 ]
 
 export default products

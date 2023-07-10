@@ -243,11 +243,6 @@
 }
 
 @media (max-width: 768px) {
-    .search-bar,
-    nav:not(.nav-mobile) {
-        display: none;
-    }
-
     .nav-mobile {
         display: flex;
     }

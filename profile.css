@@ -1,5 +1,3 @@
-
-
 .content {
     max-width: 1080px;
     margin: 0 auto;
@@ -10,12 +8,12 @@
     flex-direction: column;
 }
 
-.content .pb{
+.content .pb {
     width: 100%;
     background-color: #fffafa;
 }
 
-.isi{
+.isi {
     width: 1080px;
     display: flex;
     padding-top: 1rem;
@@ -23,7 +21,7 @@
 
 }
 
-.isi .user-details{
+.isi .user-details {
     /* width : 800px; */
     /* padding-top: 1rem; */
     background-color: #fffafa;
@@ -35,7 +33,7 @@
     flex-direction: column;
 }
 
-.isi .foto{
+.isi .foto {
     /* width :280px; */
     flex: 1;
     background-color: #fffafa;
@@ -171,6 +169,7 @@ form .button{
 }
 form .button input{
     outline: none;
+<<<<<<< HEAD
     border: 1px solid #999;
     border-radius: 3px;
     padding: 5px 8px;
@@ -213,3 +212,10 @@ form .button input{
     width: min(60%,500px);
     height: auto;
   }
+=======
+    color: #fff;
+    border: none;
+    font-size: 1;
+    background: linear-gradient(135deg,#030005,#3D0863 ); ;
+} */
+>>>>>>> 5f2477bb8176a11871c4fa1c77dfe7f2012f62bd

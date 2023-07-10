@@ -3,8 +3,9 @@
 :root {
     --main-bg: #f7f7f7;
     --White: hsla(0, 0%, 100%, 0.754);
+    --textBlack: rgb(37, 61, 78);
     --green: #3d8361;
-    --brGray: #f0f3f7;
+    --brGray: #525253;
     --textGray: #6d7588;
     --bar-width: 2rem;
     --bar-height: 0.4rem;
@@ -13,7 +14,7 @@
     --hamburger-margin: 8px;
     --animation-timing: 200ms ease-in-out;
     --hamburger-height: calc(var(--bar-height) * 2 + var(--mid-height) + var(--hamburger-gap) * 2);
-    --fade-in-animation: .4s ease fade-in;
+    --fade-in-animation: 0.4s ease fade-in;
 }
 
 *,
@@ -38,7 +39,7 @@
     --hamburger-margin: 8px;
     --animation-timing: 200ms ease-in-out;
     --hamburger-height: calc(var(--bar-height) * 2 + var(--mid-height) + var(--hamburger-gap) * 2);
-    --fade-in-animation: .4s ease fade-in;
+    --fade-in-animation: 0.4s cubic-bezier(0, 0, 0.3, 1) forwards fade-in;
 }
 
 body {
@@ -47,6 +48,7 @@ body {
     -webkit-font-smoothing: antialiased;
     font-family: "Poppins", sans-serif;
     background: var(--main-bg);
+    color: var(--textBlack);
     min-height: 100vh;
     width: 100vw;
 }
@@ -76,15 +78,14 @@ h6 {
 
 h2,
 h3 {
-    font-weight: 500;
+    font-weight: 700;
 }
 
 hr {
-    margin-top: 2rem;
-    border: 1.2px solid var(--brGray);
+    border: 1.2px solid rgb(200, 200, 200);
 }
 
-@media(prefers-reduce-motion) {
+@media (prefers-reduce-motion) {
     .elHidden {
         transition: none;
     }

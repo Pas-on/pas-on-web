@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="../template.css" />
+        <link rel="stylesheet" href="../navbar.css" />
+        <link rel="shortcut icon" href="../assets/favicon.ico" type="image/x-icon" />
+        <script src="https://kit.fontawesome.com/aefe7f07e5.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="cart.css" />
+        <script src="cart.js" defer type="module"></script>
+        <script src="../drawer.js" defer></script>
+    </head>
+    <body>
+        <header class="header">
+            <div class="hamburger">
+                <label class="hamburger-menu">
+                    <input type="checkbox" id="hamburger-button" />
+                </label>
+            </div>
+            <img src="../assets/logo1.png" alt="logo" onclick="location.href='/index.html'" />
+            <div class="search-bar">
+                <input type="text" placeholder="mau cari apa hari ini?" />
+                <div class="icon">
+                    <i class="fa-solid fa-lg fa-magnifying-glass" style="color: white"></i>
+                </div>
+            </div>
+
+            <nav>
+                <i class="fa-solid fa-basket-shopping fa-xl" onclick="location.href='/cart/index.html'"></i>
+                <i class="fa-solid fa-heart wishlist-icon fa-xl"></i>
+                <div class="vertical-line"></div>
+                <div class="profile">
+                    <ul class="drop-down-profile">
+                        <div class="arrow"></div>
+                        <li onclick="location.href='/profile.html'">profile</li>
+                        <li onclick="location.href='/auth/login.html'">log out</li>
+                    </ul>
+                </div>
+            </nav>
+
+            <nav class="nav-mobile">
+                <i class="fa-solid fa-lg fa-magnifying-glass"></i>
+                <i class="fa-solid fa-basket-shopping fa-xl" onclick="location.href='/cart/index.html'"></i>
+            </nav>
+        </header>
+        <div class="drawer" id="drawer">
+            <div onclick="location.href='/profile.html'">
+                <div class="profile"></div>
+                <p>Jokowi</p>
+            </div>
+            <div>
+                <i class="fa-regular fa-heart fa-xl"></i>
+                <p>wishlist</p>
+                <i class="fa-solid fa-chevron-right"></i>
+            </div>
+            <div>
+                <i class="fa-solid fa-percent fa-xl"></i>
+                <p>promos</p>
+                <i class="fa-solid fa-chevron-right"></i>
+            </div>
+            <div onclick="location.href='/auth/login.html'">
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                <p>log out</p>
+            </div>
+        </div>
+        <main>
+            <div class="container">
+                <h1>cart</h1>
+                <hr />
+                <div class="cart-wrapper">
+                    <div class="product-container"></div>
+                    <div class="cart-action">
+                        <h2>ringkasan belanja</h2>
+                        <div>
+                            <p>total harga</p>
+                            <p class="summaryPrice"></p>
+                        </div>
+                        <hr />
+                        <div>
+                            <p class="text-bold">total harga</p>
+                            <p class="text-bold summaryPrice"></p>
+                        </div>
+                        <button>bayar</button>
+                    </div>
+                </div>
+            </div>
+            <div class="cart-action-mobile">
+                <div>
+                    <p class="text-bold">total harga</p>
+                    <p class="text-bold summaryPrice"></p>
+                </div>
+                <button>bayar</button>
+            </div>
+        </main>
+    </body>
+</html>

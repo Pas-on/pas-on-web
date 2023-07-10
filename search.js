@@ -24,7 +24,7 @@ searchInput.addEventListener("input", e => {
             )}</strong>${list.title.substring(index + query.length)}`
             item.innerHTML = boldedTitle
             item.addEventListener("click", () => {
-                location.href = `/search?q=${list.title}`
+                location.href = `/search/index.html?q=${list.title}`
             })
             searchList.appendChild(item)
             searchList.style.height = `${item.clientHeight * 5}px`
@@ -34,5 +34,5 @@ searchInput.addEventListener("input", e => {
 
 searchForm.addEventListener("submit", e => {
     e.preventDefault()
-    location.href = `/search?q=${searchInput.value}`
+    location.href = `/search/index.html?q=${searchInput.value}`
 })

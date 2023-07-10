@@ -50,7 +50,7 @@ form.addEventListener("submit", e => {
             setTimeout(addErrorText, 500)
         } else {
             fakeLoading()
-            setInterval(() => {
+            setTimeout(() => {
                 location.href = "/"
             }, 500)
         }

@@ -71,7 +71,7 @@ searchInputMobile.addEventListener("input", e => {
 
 searchFormMobile.addEventListener("submit", e => {
     e.preventDefault()
-    location.href = `/search/index.html?q=${searchInput.value}`
+    location.href = `/search/index.html?q=${searchInputMobile.value}`
 })
 
 // toggle search bar mobile
@@ -83,4 +83,12 @@ backButton.addEventListener("click", () => {
 const searchIcon = document.querySelector("#search-icon")
 searchIcon.addEventListener("click", () => {
     searchFormMobile.style.transform = "translateX(0)"
+})
+
+//popover
+const popAction = document.querySelector(".profile")
+const dropDown = document.querySelector(".drop-down-profile")
+popAction.addEventListener("click", () => {
+    console.log(popAction)
+    dropDown.classList.toggle("active")
 })

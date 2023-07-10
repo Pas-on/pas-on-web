@@ -2,8 +2,6 @@
 
 /* global styling */
 
-/* navbar styling */
-
 /* carousel */
 .carousel {
     position: relative;
@@ -220,7 +218,8 @@
     z-index: 1;
     opacity: 1;
     position: absolute;
-    top: 5px;
+    top: 2px;
+    padding-top: 0.3rem;
     right: 0;
     padding-inline: 0.3rem;
 }

@@ -65,7 +65,7 @@ new ProductSlider(susuItemsWrapper, susuLeftButton, susuRightButton)
 const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            entry.target.style.animation = "var(--fade-in-animation)"
+            entry.target.style.animation = "var(--scale-in-animation)"
         }
     })
 })

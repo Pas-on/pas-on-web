@@ -104,7 +104,6 @@ header {
     align-items: center;
     border-bottom: 1px solid var(--brGray);
     position: sticky;
-
     top: 0;
     gap: 1rem;
     z-index: 5;
@@ -247,11 +246,19 @@ nav {
     border: 1px solid hsla(0, 0%, 0%, 0.278);
     width: 50px;
     aspect-ratio: 1;
+    cursor: pointer;
     display: inline-block;
     position: relative;
     background-image: url("assets/jokowi.jpeg");
     background-repeat: no-repeat;
     background-size: cover;
+    transform: scale(1);
+    transition: all 0.4s;
+}
+
+.profile:hover {
+    transform: scale(1.1);
+    filter: brightness(0.9);
 }
 
 .wishlist-icon:hover {
@@ -269,6 +276,7 @@ nav {
     margin-top: 10px;
     top: 50px;
     right: 0;
+    transform: translateY(-1000px);
     flex-direction: column;
     position: absolute;
     padding: 0;
@@ -305,8 +313,9 @@ nav {
     background-color: var(--bg-hover);
 }
 
-.profile:hover .drop-down-profile {
+.drop-down-profile.active {
     opacity: 1;
+    transform: translateY(0);
 }
 
 nav > i {

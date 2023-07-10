@@ -3,7 +3,6 @@ import products from "../data/products.js"
 import Counter from "./Counter.js"
 
 const productContainer = document.querySelector(".product-container")
-// get productId dari localstorage
 
 const injectCartProduct = () => {
     const cartProduct = getCartItem()
@@ -65,6 +64,7 @@ const updateSummary = () => {
     })
     const totalPrice = summaryProducts.reduce((prev, cur) => prev + Number(cur.price) * Number(cur.quantity), 0)
     summaryPrice.forEach(e => {
+        e.value = totalPrice
         e.innerHTML = new Intl.NumberFormat("id-ID", {
             style: "currency",
             currency: "IDR",
@@ -75,20 +75,62 @@ const updateSummary = () => {
 injectCartProduct()
 updateSummary()
 
-const trashButton = document.querySelectorAll(".fa-trash")
-trashButton.forEach(button => {
-    button.addEventListener("click", e => {
+document.addEventListener("click", e => {
+    if (e.target.classList.contains("fa-trash")) {
+        const trashButton = e.target
         const cartProduct = getCartItem()
-        const updatedCart = cartProduct.filter(item => item !== button.dataset.id)
+        const updatedCart = cartProduct.filter(item => item !== trashButton.dataset.id)
         setCartItem(updatedCart)
         injectCartProduct()
         updateSummary()
-    })
+    }
 })
 
 const inputs = document.querySelectorAll('input[type="number"]')
 inputs.forEach(input => {
     input.addEventListener("change", () => {
         updateSummary()
+    })
+})
+
+// button
+const paymentButton = document.querySelectorAll(".cart-payment")
+
+const fakeLoading = () => {
+    paymentButton.forEach(button => {
+        const spinner = document.createElement("i")
+        spinner.classList.add("fa", "fa-spinner", "fa-spin")
+        button.innerText = ""
+        button.append(spinner)
+    })
+}
+
+const summaryPrice = document.querySelectorAll(".summaryPrice")
+
+paymentButton.forEach(button => {
+    button.addEventListener("click", () => {
+        if (summaryPrice[1].value === 0) return
+        fakeLoading()
+        setTimeout(() => {
+            paymentButton.forEach(paymentButton => (paymentButton.innerText = "bayar"))
+            Swal.fire({
+                icon: "success",
+                title: "pembayaran berhasil.",
+                width: 600,
+                padding: "3em",
+                timer: 2000,
+                confirmButtonColor: "#539165",
+                timerProgressBar: true,
+                backdrop: `
+              rgba(0,0,123,0.4)
+              url("../assets/conffeti.gif")
+              no-repeat
+              fixed center / cover
+            `,
+            })
+            setCartItem([])
+            injectCartProduct()
+            updateSummary()
+        }, 1000)
     })
 })

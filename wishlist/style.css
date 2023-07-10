@@ -76,6 +76,10 @@
     font-size: smaller;
 }
 
+#total-wishlist {
+    color: gray;
+}
+
 .product-cart-button {
     width: 70%;
     margin-block: 0.5rem;

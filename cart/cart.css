@@ -155,6 +155,10 @@
     transition: filter 0.4s;
 }
 
+.product-container h2 {
+    margin-block: 2rem;
+}
+
 .cart-action-mobile {
     display: none;
     position: fixed;

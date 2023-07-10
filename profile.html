@@ -12,6 +12,7 @@
     <script src="https://kit.fontawesome.com/aefe7f07e5.js" crossorigin="anonymous"></script>
     <script src="profile.js" defer></script>
     <script src="drawer.js" defer></script>
+    <script src="search.js" defer type="module"></script>
 
 </head>
 
@@ -23,12 +24,15 @@
             </label>
         </div>
         <img src="assets/logo1.png" alt="logo" onclick="location.href='index.html'" />
-        <div class="search-bar">
-            <input type="text" placeholder="mau cari apa hari ini?" />
-            <div class="icon">
-                <i class="fa-solid fa-lg fa-magnifying-glass" style="color: white"></i>
+        <form action="#" class="search-form" autocomplete="off">
+            <div class="search-bar">
+                <input type="text" placeholder="mau cari apa hari ini?" id="search-input" />
+                <button class="icon search-icon" type="submit">
+                    <i class="fa-solid fa-lg fa-magnifying-glass" style="color: white"></i>
+                </button>
             </div>
-        </div>
+            <ul class="list-search"></ul>
+        </form>
 
         <nav>
             <i class="fa-solid fa-basket-shopping fa-xl" onclick="location.href='cart/index.html'"></i>
@@ -44,9 +48,22 @@
         </nav>
 
         <nav class="nav-mobile">
-            <i class="fa-solid fa-lg fa-magnifying-glass"></i>
+            <i class="fa-solid fa-lg fa-magnifying-glass" id="search-icon"></i>
             <i class="fa-solid fa-basket-shopping fa-xl" onclick="location.href='cart/index.html'"></i>
         </nav>
+
+        <form action="#" class="search-form-mobile hidden" autocomplete="off">
+            <div>
+                <i class="fa-solid fa-chevron-left back-button"></i>
+                <div class="search-bar">
+                    <input type="text" placeholder="mau cari apa hari ini?" id="search-input-mobile" />
+                    <button class="icon search-icon" type="submit">
+                        <i class="fa-solid fa-lg fa-magnifying-glass" style="color: white"></i>
+                    </button>
+                </div>
+            </div>
+            <ul id="list-search-mobile"></ul>
+        </form>
     </header>
     <div class="drawer" id="drawer">
         <div onclick="location.href='/profile.html'">
@@ -76,7 +93,7 @@
         </div>
         <div class="isi">
             <div class="user-details">
-                <form action="">
+                <form action="#">
                 <table>
                     <tr>
                         <td><span class="details">Username</span></td>
@@ -90,22 +107,17 @@
 
                     </tr>
                     <tr>
-
                         <td><span class="details">Email</span></td>
                         <td><input type="text" placeholder="Masukkan Email Anda" required></td>
-
                     </tr>
                     <tr>
-
                         <td><span class="details">Nomor Telepon</span></td>
                         <td><input type="text" placeholder="Masukkan Nomor Telepon Anda" required></td>
 
                     </tr>
                     <tr>
-
                         <td><span class="details">Tanggal Lahir</span></td>
                         <td><input type="text" placeholder="Masukkan Tanggal Lahir Anda" required></td>
-
                     </tr>
                     <tr>
                         <td><span class="gender-title">Gender</span></td>
@@ -132,19 +144,14 @@
 
                             </div>
                         </td>
-                                </div>
-                            </td>
+                                
                         
 
-                            </div>
-                        </td>
                     </tr>
                     <tr>
                         <td></td>
                         <td>
-                            <div class="button">
-                                <input type="Submit" value="Submit">
-                            </div>
+                            <button type="submit">submit</button>
                         </td>
                     </tr>
                 </table>
@@ -152,14 +159,13 @@
             </form>
             </div>
             <div class="foto">
-                <img src="./assets/jokowi.jpeg" alt="profile-picture">
-                <input type="file" class="input-file">
+                <img src="./assets/jokowi.jpeg" alt="profile-picture" id="profile-picture" >
+                <label for="file" id="input-file">input file</label>
+                <input type="file" id="file" class="input-file" hidden>
             </form>
             </div>
-           
             </div>
         </div>
-
 </body>
 
 </html>

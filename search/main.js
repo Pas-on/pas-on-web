@@ -12,7 +12,7 @@ foundNum.innerText = findProducts.length
 if (findProducts.length) {
     findProducts.forEach(product => {
         const item = document.createElement("div")
-        item.classList.add("product-item", "elHidden")
+        item.classList.add("product-item", "hidden")
         item.innerHTML = `<div class="image-wrapper">
         <img src="../assets/${product.image}" alt="sayuran" loading="lazy" />
         <div class="product-action ">
@@ -36,6 +36,18 @@ if (findProducts.length) {
 } else {
     productContainer.innerHTML = `<p class='full-row'">item tidak ditemukan</p>`
 }
+
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.remove("hidden")
+        }
+    })
+})
+
+const hiddenElements = document.querySelectorAll(".product-item")
+console.log(hiddenElements)
+hiddenElements.forEach(el => observer.observe(el))
 
 const wishlistButtons = document.querySelectorAll(".wishlist")
 // get wishlist item dr localStorage

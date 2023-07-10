@@ -5,11 +5,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="../template.css" />
         <link rel="stylesheet" href="../navbar.css" />
+        <link rel="stylesheet" href="style.css" />
         <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" />
         <script src="https://kit.fontawesome.com/aefe7f07e5.js" crossorigin="anonymous"></script>
         <title>Pas-on: marketplace groceries terbaik di indonesia</title>
         <script src="../search.js" defer type="module"></script>
-        <link rel="stylesheet" href="style.css" />
         <script src="./main.js" defer type="module"></script>
     </head>
     <body>
@@ -31,22 +31,35 @@
             </form>
 
             <nav>
-                <i class="fa-solid fa-basket-shopping fa-xl" onclick="location.href='/cart/index.html'"></i>
+                <i class="fa-solid fa-basket-shopping fa-xl" onclick="location.href='cart/index.html'"></i>
                 <i class="fa-solid fa-heart wishlist-icon fa-xl"></i>
                 <div class="vertical-line"></div>
                 <div class="profile">
                     <ul class="drop-down-profile">
                         <div class="arrow"></div>
-                        <li onclick="location.href='/profile.html'">profile</li>
-                        <li onclick="location.href='/auth/login.html'">log out</li>
+                        <li onclick="location.href='profile.html'">profile</li>
+                        <li onclick="location.href='auth/login.html'">log out</li>
                     </ul>
                 </div>
             </nav>
 
             <nav class="nav-mobile">
-                <i class="fa-solid fa-lg fa-magnifying-glass"></i>
-                <i class="fa-solid fa-basket-shopping fa-xl" onclick="location.href='/cart/index.html'"></i>
+                <i class="fa-solid fa-lg fa-magnifying-glass" id="search-icon"></i>
+                <i class="fa-solid fa-basket-shopping fa-xl" onclick="location.href='cart/index.html'"></i>
             </nav>
+
+            <form action="#" class="search-form-mobile hidden" autocomplete="off">
+                <div>
+                    <i class="fa-solid fa-chevron-left back-button"></i>
+                    <div class="search-bar">
+                        <input type="text" placeholder="mau cari apa hari ini?" id="search-input-mobile" />
+                        <button class="icon search-icon" type="submit">
+                            <i class="fa-solid fa-lg fa-magnifying-glass" style="color: white"></i>
+                        </button>
+                    </div>
+                </div>
+                <ul id="list-search-mobile"></ul>
+            </form>
         </header>
         <div class="drawer" id="drawer">
             <div onclick="location.href='/profile.html'">

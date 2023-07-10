@@ -41,7 +41,7 @@
     height: fit-content;
     justify-content: flex-start;
     border-bottom: 1px solid gray;
-    animation: var(--fade-in-animation);
+    animation: var(--slide-in-animation);
 }
 
 .product-wrapper {

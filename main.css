@@ -71,6 +71,7 @@
 .slide[data-current] img {
     opacity: 1;
     height: auto;
+    animation: var(--fade-in-animation);
 }
 
 /* new-item-section */

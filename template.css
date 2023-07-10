@@ -1,24 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap");
 
-:root {
-    --main-bg: #f7f7f7;
-    --White: hsla(0, 0%, 100%, 0.754);
-    --textBlack: rgb(37, 61, 78);
-    --green: #3d8361;
-    --brGray: #525253;
-    --textGray: #6d7588;
-    --bar-width: 2rem;
-    --bar-height: 0.4rem;
-    --hamburger-gap: 0.4rem;
-    --mid-height: calc(var(--bar-height) - 0.1rem);
-    --hamburger-margin: 8px;
-    --animation-timing: 200ms ease-in-out;
-    --hamburger-height: calc(var(--bar-height) * 2 + var(--mid-height) + var(--hamburger-gap) * 2);
-    --fade-in-animation: 0.5s fade;
-    --scale-in-animation: 0.4s ease scale-in;
-    --slide-in-animation: 0.4s ease slide-in;
-}
-
 *,
 *::before,
 *::after {
@@ -32,7 +13,7 @@
     --main-bg: #f7f7f7;
     --White: hsla(0, 0%, 100%, 0.754);
     --green: #3d8361;
-    --brGray: #f0f3f7;
+    --brGray: #c9c8c8;
     --textGray: #6d7588;
     --bar-width: 2rem;
     --bar-height: 0.4rem;
@@ -90,6 +71,31 @@ html {
 
 hr {
     border: 1.2px solid rgb(200, 200, 200);
+}
+
+footer {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid var(--brGray);
+    padding: 2rem;
+
+    background: #fffafa;
+}
+
+footer .fa-github {
+    font-size: 2rem;
+    color: #1e3050;
+}
+
+footer .fa-github:active,
+footer .fa-github:visited {
+    color: inherit;
+}
+
+footer div {
+    display: flex;
 }
 
 @media (prefers-reduce-motion) {

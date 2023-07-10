@@ -238,6 +238,11 @@ const products = [
         "size": "1L",
         "category": "Susu",
         "image": "/Foto Project/Susu/ultramilk_full_cream-removebg-preview.png",
+        "title": "beras import jepang kualitas terbaik",
+        "price": 125000,
+        "size": "10kg",
+        "category": "new",
+        "image": "/beras-removebg-preview.png",
     },
 ]
 

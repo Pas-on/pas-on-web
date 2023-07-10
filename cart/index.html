@@ -18,13 +18,16 @@
                     <input type="checkbox" id="hamburger-button" />
                 </label>
             </div>
-            <img src="../assets/logo1.png" alt="logo" onclick="location.href='/index.html'" />
-            <div class="search-bar">
-                <input type="text" placeholder="mau cari apa hari ini?" />
-                <div class="icon">
-                    <i class="fa-solid fa-lg fa-magnifying-glass" style="color: white"></i>
+            <img src="../assets/logo1.png" alt="logo" onclick="location.href='/'" />
+            <form action="#" class="search-form" autocomplete="off">
+                <div class="search-bar">
+                    <input type="text" placeholder="mau cari apa hari ini?" id="search-input" />
+                    <button class="icon search-icon" type="submit">
+                        <i class="fa-solid fa-lg fa-magnifying-glass" style="color: white"></i>
+                    </button>
                 </div>
-            </div>
+                <ul class="list-search"></ul>
+            </form>
 
             <nav>
                 <i class="fa-solid fa-basket-shopping fa-xl" onclick="location.href='/cart/index.html'"></i>

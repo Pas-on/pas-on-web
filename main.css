@@ -243,14 +243,6 @@
 }
 
 @media (max-width: 768px) {
-    .nav-mobile {
-        display: flex;
-    }
-
-    .drawer {
-        display: flex;
-    }
-
     .item-container {
         overflow-x: auto;
     }

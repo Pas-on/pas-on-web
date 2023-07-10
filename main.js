@@ -18,16 +18,12 @@ crButtons.forEach(button => {
     })
 })
 
-//new-product-slider
-const newItemsWrapper = document.getElementById("new-items")
-const npLeftButton = document.getElementById("np-left-button")
-const npRightButton = document.getElementById("np-right-button")
-new ProductSlider(newItemsWrapper, npLeftButton, npRightButton)
-
 // meat-product-slider
 const meatItemsWrapper = document.getElementById("meat-items")
+const meatItemsContainer = meatItemsWrapper.querySelector(".item-container")
 const meatLeftButton = document.getElementById("meat-left-button")
 const meatRightButton = document.getElementById("meat-right-button")
+injectProduct("Daging", meatItemsContainer)
 new ProductSlider(meatItemsWrapper, meatLeftButton, meatRightButton)
 
 // sayuran-product-slider
@@ -35,10 +31,36 @@ const sayuranItemsWrapper = document.getElementById("sayuran-items")
 const sayuranItemsContainer = sayuranItemsWrapper.querySelector(".item-container")
 const sayuranLeftButton = document.getElementById("sayuran-left-button")
 const sayuranRightButton = document.getElementById("sayuran-right-button")
-injectProduct("sayuran", sayuranItemsContainer)
+injectProduct("Sayur", sayuranItemsContainer)
 
 new ProductSlider(sayuranItemsWrapper, sayuranLeftButton, sayuranRightButton)
 
+//buah
+const buahItemsWrapper = document.getElementById("buah-items")
+const buahItemsContainer = buahItemsWrapper.querySelector(".item-container")
+const buahLeftButton = document.getElementById("buah-left-button")
+const buahRightButton = document.getElementById("buah-right-button")
+injectProduct("Buah", buahItemsContainer)
+
+new ProductSlider(buahItemsWrapper, buahLeftButton, buahRightButton)
+
+//buah
+const seafoodItemsWrapper = document.getElementById("seafood-items")
+const seafoodItemsContainer = seafoodItemsWrapper.querySelector(".item-container")
+const seafoodLeftButton = document.getElementById("seafood-left-button")
+const seafoodRightButton = document.getElementById("seafood-right-button")
+injectProduct("Seafood", seafoodItemsContainer)
+
+new ProductSlider(seafoodItemsWrapper, seafoodLeftButton, seafoodRightButton)
+
+//susu
+const susuItemsWrapper = document.getElementById("susu-items")
+const susuItemsContainer = susuItemsWrapper.querySelector(".item-container")
+const susuLeftButton = document.getElementById("susu-left-button")
+const susuRightButton = document.getElementById("susu-right-button")
+injectProduct("Susu", susuItemsContainer)
+
+new ProductSlider(susuItemsWrapper, susuLeftButton, susuRightButton)
 // on scroll animation
 const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {

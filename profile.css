@@ -179,7 +179,6 @@ form .button input {
     height: 100%;
     width: 100%;
     outline: none;
-<<<<<<< HEAD
     color: #fff;
     border: none;
     opacity: 1;
@@ -194,9 +193,6 @@ form .button input {
     content: "Select some files";
     display: inline-block;
     background: linear-gradient(top, #f9f9f9, #e3e3e3);
-=======
-<<<<<<< HEAD
->>>>>>> b80babb098eddbb6739fc2789b609e7b4ac77ba7
     border: 1px solid #999;
     border-radius: 3px;
     padding: 5px 8px;
@@ -238,4 +234,3 @@ form .button input {
     width: min(60%, 500px);
     height: auto;
 }
-

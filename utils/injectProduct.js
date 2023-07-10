@@ -6,7 +6,7 @@ const injectProduct = (category, productContainer) => {
         const child = document.createElement("div")
         child.classList.add("slider-item", "elHidden")
         child.innerHTML = `<div class="image-wrapper">
-        <img src="assets/${product.image}" alt="sayuran" loading="lazy" />
+        <img src="assets${product.image}" alt="sayuran" loading="lazy" />
         <div class="product-action ">
             <i class="fa-solid  fa-heart wishlist fa-xl" data-id=${product.id}></i>
         </div>

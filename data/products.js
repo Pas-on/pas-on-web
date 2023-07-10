@@ -4,7 +4,7 @@ const products = [
         "title": "aneka sayuran",
         "price": 150000,
         "size": "700gr",
-        "category": "sayuran",
+        "category": "new",
         "image": "/aneka_sayuran-removebg-preview.png",
     },
     {
@@ -20,7 +20,7 @@ const products = [
         "title": "beras import jepang kualitas terbaik",
         "price": 125000,
         "size": "10kg",
-        "category": "sayuran",
+        "category": "new",
         "image": "/beras-removebg-preview.png",
     },
 ]

@@ -45,7 +45,7 @@ form.addEventListener("submit", e => {
         userData.push({ name: name.value, password: password.value })
         localStorage.setItem("users", JSON.stringify(userData))
         fakeLoading()
-        setInterval(() => {
+        setTimeout(() => {
             location.href = "/auth/login.html"
         }, 500)
     }

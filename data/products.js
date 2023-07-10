@@ -12,7 +12,7 @@ const products = [
         "title": "bawang putih jepang",
         "price": 70000,
         "size": "350gr",
-        "category": "new",
+        "category": "sayuran",
         "image": "/bawang_putih-removebg-preview.png",
     },
     {

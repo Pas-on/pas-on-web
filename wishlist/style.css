@@ -1,6 +1,7 @@
 .container {
     width: min(90%, 1080px);
     margin: 0 auto;
+    padding-block: 0.5rem;
 }
 
 .product-container {

@@ -43,8 +43,7 @@ if (findProducts) {
                 style: "currency",
                 currency: "IDR",
             }).format(findProducts.price)}</p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum non doloribus placeat eaque neque corrupti consequatur
-            suscipit aspernatur enim, magnam nam rem ut ab sint consequuntur molestias. Perspiciatis, minus nesciunt.
+            ${findProducts.description}
             <div class="product-action">
                 <button class="product-cart-button" data-id="${findProducts.id}">add to cart</button>
             </div>

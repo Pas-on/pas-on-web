@@ -23,6 +23,8 @@
     --animation-timing: 200ms ease-in-out;
     --hamburger-height: calc(var(--bar-height) * 2 + var(--mid-height) + var(--hamburger-gap) * 2);
     --fade-in-animation: 0.4s ease fade-in;
+    --scale-in-animation: 0.4s ease scale-in;
+    --slide-in-animation: 0.4s ease slide-in;
 }
 
 body {
@@ -102,11 +104,11 @@ footer div {
     display: flex;
 }
 
-@media (prefers-reduce-motion) {
+/* @media (prefers-reduce-motion) {
     .elHidden {
         transition: none;
     }
-}
+} */
 
 @keyframes scale-in {
     from {

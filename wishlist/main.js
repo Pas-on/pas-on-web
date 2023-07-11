@@ -36,6 +36,11 @@ const fetch = () => {
     } else {
         productContainer.innerHTML = `<p class='full-row'">item tidak ditemukan</p>`
     }
+    const wishlistButtons = document.querySelectorAll(".wishlist")
+
+    wishlistButtons.forEach(button => {
+        wishlistItem.includes(button.dataset.id) ? button.classList.add("active") : ""
+    })
 }
 
 fetch()
@@ -69,11 +74,6 @@ wishlistButtons.forEach(button => {
             fetch()
         }
     })
-})
-const wishlistItem = getWishlistItem()
-
-wishlistButtons.forEach(button => {
-    wishlistItem.includes(button.dataset.id) ? button.classList.add("active") : ""
 })
 
 // add-to-cart logic

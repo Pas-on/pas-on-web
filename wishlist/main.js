@@ -13,6 +13,9 @@ const fetch = () => {
         findProducts.forEach(product => {
             const item = document.createElement("div")
             item.classList.add("product-item", "hidden")
+            item.onclick = () => {
+                location.href = `/detail/index.html?id=${product.id}`
+            }
             item.innerHTML = `<div class="image-wrapper">
             <img src="../assets/${product.image}" alt="sayuran" loading="lazy" />
             <div class="product-action ">

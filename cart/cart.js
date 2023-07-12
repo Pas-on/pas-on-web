@@ -107,30 +107,43 @@ const fakeLoading = () => {
 
 const summaryPrice = document.querySelectorAll(".summaryPrice")
 
+const paymentLogic = async () => {
+    const { value } = await Swal.fire({
+        title: "masukan alamat anda",
+        input: "text",
+        inputPlaceholder: "ex: jalan thamrin",
+    })
+
+    if (value) {
+        paymentButton.forEach(paymentButton => (paymentButton.innerText = "bayar"))
+        Swal.fire({
+            icon: "success",
+            title: "pembayaran berhasil.",
+            width: 600,
+            padding: "3em",
+            timer: 3000,
+            confirmButtonColor: "#539165",
+            timerProgressBar: true,
+            backdrop: `
+          rgba(0,0,123,0.4)
+          url("../assets/conffeti.gif")
+          no-repeat
+          fixed center / cover
+        `,
+        })
+        setCartItem([])
+        injectCartProduct()
+        updateSummary()
+    }
+}
+
 paymentButton.forEach(button => {
     button.addEventListener("click", () => {
         if (summaryPrice[1].value === 0) return
         fakeLoading()
-        setTimeout(() => {
-            paymentButton.forEach(paymentButton => (paymentButton.innerText = "bayar"))
-            Swal.fire({
-                icon: "success",
-                title: "pembayaran berhasil.",
-                width: 600,
-                padding: "3em",
-                timer: 2000,
-                confirmButtonColor: "#539165",
-                timerProgressBar: true,
-                backdrop: `
-              rgba(0,0,123,0.4)
-              url("../assets/conffeti.gif")
-              no-repeat
-              fixed center / cover
-            `,
-            })
-            setCartItem([])
-            injectCartProduct()
-            updateSummary()
+
+        setTimeout(async () => {
+            await paymentLogic()
         }, 1000)
     })
 })

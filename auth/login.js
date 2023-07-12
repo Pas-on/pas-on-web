@@ -14,7 +14,7 @@ eyeIcon.addEventListener("click", () => {
 })
 
 // form logic
-import users from "../data/user.js"
+import { getUserItem } from "../utils/userHelper.js"
 const form = document.querySelector("form")
 const errorBox = document.querySelector(".error-box")
 const errorText = "user atau password salah"
@@ -22,7 +22,7 @@ const submitButton = document.querySelector("button")
 const spinner = document.createElement("i")
 spinner.classList.add("fa", "fa-spinner", "fa-spin")
 //set to local storage
-const userData = localStorage.getItem("users") ? JSON.parse(localStorage.getItem("users")) : localStorage.setItem("users", JSON.stringify(users))
+const userData = getUserItem()
 
 const fakeLoading = () => {
     submitButton.innerText = ""
@@ -51,6 +51,7 @@ form.addEventListener("submit", e => {
         } else {
             fakeLoading()
             setTimeout(() => {
+                localStorage.setItem("activeUser", findUser.name)
                 location.href = "/"
             }, 500)
         }

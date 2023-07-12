@@ -250,9 +250,9 @@ nav {
     cursor: pointer;
     display: inline-block;
     position: relative;
-    background-image: url("assets/jokowi.jpeg");
+    background-image: url("assets/profile-picture.png");
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
     transform: scale(1);
     transition: all 0.4s;
 }

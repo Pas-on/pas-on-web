@@ -1,5 +1,6 @@
 const productContainer = document.querySelector(".product-container")
-
+const profileName = document.querySelector(".profile-name")
+profileName.innerText = localStorage.getItem("activeUser")
 import products from "../data/products.js"
 import colorPicker from "../utils/colorPicker.js"
 import { getWishlistItem, setWishlistItem } from "../utils/wishlistHelper.js"

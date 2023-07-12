@@ -1,6 +1,8 @@
 import { ProductSlider } from "./slider.js"
 import { getWishlistItem, setWishlistItem } from "./utils/wishlistHelper.js"
 import injectProduct from "./utils/injectProduct.js"
+import { getUserItem, setUserItem } from "./utils/userHelper.js"
+import users from "./data/user.js"
 
 const crButtons = document.querySelectorAll("[data-cr-button]")
 
@@ -140,3 +142,8 @@ cartButtons.forEach(button => {
         }
     })
 })
+
+localStorage.getItem("activeUser") ? "" : localStorage.setItem("activeUser", "john")
+getUserItem() ? "" : setUserItem(users)
+const profileName = document.querySelector(".profile-name")
+profileName.innerText = localStorage.getItem("activeUser")

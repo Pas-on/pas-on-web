@@ -1,6 +1,7 @@
 import products from "../data/products.js"
 import { getWishlistItem, setWishlistItem } from "../utils/wishlistHelper.js"
-
+const profileName = document.querySelector(".profile-name")
+profileName.innerText = localStorage.getItem("activeUser")
 const productContainer = document.querySelector(".product-container")
 const queryString = window.location.search
 const urlParams = new URLSearchParams(queryString)

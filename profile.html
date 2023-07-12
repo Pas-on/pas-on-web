@@ -9,9 +9,11 @@
         <link rel="stylesheet" href="navbar.css" />
         <link rel="stylesheet" href="profile.css" />
         <script src="https://kit.fontawesome.com/aefe7f07e5.js" crossorigin="anonymous"></script>
-        <script src="profile.js" defer></script>
+        <script src="profile.js" defer type="module"></script>
         <script src="drawer.js" defer></script>
         <script src="search.js" defer type="module"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.4/dist/sweetalert2.min.css" />
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.4/dist/sweetalert2.min.js" defer></script>
     </head>
 
     <body>
@@ -66,7 +68,7 @@
         <div class="drawer" id="drawer">
             <div onclick="location.href='/profile.html'">
                 <div class="profile"></div>
-                <p>Jokowi</p>
+                <p class="profile-name">Jokowi</p>
             </div>
             <div onclick="location.href='wishlist/index.html'">
                 <i class="fa-regular fa-heart fa-xl"></i>
@@ -87,7 +89,7 @@
             </div>
             <div class="isi">
                 <div class="user-details">
-                    <form action="#">
+                    <form action="#" id="profile-form">
                         <table>
                             <tr>
                                 <td><span class="details">Username</span></td>
@@ -95,27 +97,27 @@
                             </tr>
                             <tr>
                                 <td><span class="details">Nama</span></td>
-                                <td><input type="text" placeholder="Masukkan Nama Anda" required /></td>
+                                <td><input type="text" placeholder="Masukkan Nama Anda" name="name" required /></td>
                             </tr>
                             <tr>
                                 <td><span class="details">Email</span></td>
-                                <td><input type="email" placeholder="Masukkan Email Anda" required /></td>
+                                <td><input type="email" placeholder="Masukkan Email Anda" name="email" required /></td>
                             </tr>
                             <tr>
                                 <td><span class="details">Nomor Telepon</span></td>
-                                <td><input type="tel" placeholder="Masukkan Nomor Telepon Anda" required /></td>
+                                <td><input type="tel" placeholder="Masukkan Nomor Telepon Anda" name="nomorTelepon" required /></td>
                             </tr>
                             <tr>
                                 <td><span class="details">Tanggal Lahir</span></td>
-                                <td><input type="date" placeholder="Masukkan Tanggal Lahir Anda" required /></td>
+                                <td><input type="date" placeholder="Masukkan Tanggal Lahir Anda" name="tanggalLahir" required /></td>
                             </tr>
                             <tr>
                                 <td><span class="gender-title">Gender</span></td>
                                 <td>
                                     <div class="gender">
-                                        <input type="radio" name="gender" id="dot-1" />
-                                        <input type="radio" name="gender" id="dot-2" />
-                                        <input type="radio" name="gender" id="dot-3" />
+                                        <input type="radio" name="gender" value="male" id="dot-1" />
+                                        <input type="radio" name="gender" value="Female" id="dot-2" />
+                                        <input type="radio" name="gender" value="lainnya" id="dot-3" />
 
                                         <div class="category">
                                             <label for="dot-1">
@@ -144,7 +146,7 @@
                     </form>
                 </div>
                 <div class="foto">
-                    <img src="./assets/jokowi.jpeg" alt="profile-picture" id="profile-picture" />
+                    <img src="./assets/profile-picture.png" alt="profile-picture" id="profile-picture" />
                     <label for="file" id="input-file">input file</label>
                     <input type="file" id="file" class="input-file" hidden />
                 </div>

@@ -106,7 +106,8 @@ const fakeLoading = () => {
 }
 
 const summaryPrice = document.querySelectorAll(".summaryPrice")
-
+const profileName = document.querySelector(".profile-name")
+profileName.innerText = localStorage.getItem("activeUser")
 const paymentLogic = async () => {
     const { value } = await Swal.fire({
         title: "masukan alamat anda",

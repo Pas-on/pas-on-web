@@ -1,3 +1,5 @@
+import { setUserItem } from "../utils/userHelper.js"
+
 const passwordInput = document.querySelector("input[type='password']")
 const eyeIcon = document.querySelector("#eye-icon")
 
@@ -42,8 +44,8 @@ form.addEventListener("submit", e => {
         fakeLoading()
         setTimeout(addErrorText, 500)
     } else {
-        userData.push({ name: name.value, password: password.value })
-        localStorage.setItem("users", JSON.stringify(userData))
+        userData.push({ name: name.value, password: password.value, username: "", nomorTelepon: "", email: "", gender: "", tanggalLahir: "" })
+        setUserItem(userData)
         fakeLoading()
         setTimeout(() => {
             location.href = "/auth/login.html"

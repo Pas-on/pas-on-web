@@ -13,3 +13,6 @@ button.addEventListener("change", () => {
         drawer.classList.remove("open")
     }
 })
+
+const profileName = document.querySelector(".profile-name")
+profileName.innerText = localStorage.getItem("activeUser")

@@ -1,6 +1,13 @@
 import { getCartItem, setCartItem } from "../utils/cartHelper.js"
 import products from "../data/products.js"
 import Counter from "./Counter.js"
+import { getUserItem } from "../utils/userHelper.js"
+
+// find-container-height
+const navbar = document.querySelector("header")
+const container = document.querySelector(".container")
+const navbarHeight = navbar.clientHeight
+container.style.height = `calc(100vh - ${navbarHeight}px)`
 
 const productContainer = document.querySelector(".product-container")
 
@@ -105,6 +112,26 @@ const fakeLoading = () => {
     })
 }
 
+const revertPayButton = () => {
+    paymentButton.forEach(button => {
+        button.innerText = "bayar"
+    })
+}
+
+const closeButton = document.querySelector(".close-button")
+const paymentModal = document.querySelector(".payment-container")
+const overlay = document.querySelector(".overlay")
+
+closeButton.addEventListener("click", () => {
+    paymentModal.classList.remove("active")
+    revertPayButton()
+})
+
+overlay.addEventListener("click", () => {
+    paymentModal.classList.remove("active")
+    revertPayButton()
+})
+
 const summaryPrice = document.querySelectorAll(".summaryPrice")
 
 paymentButton.forEach(button => {
@@ -112,8 +139,94 @@ paymentButton.forEach(button => {
         if (summaryPrice[1].value === 0) return
         fakeLoading()
 
-        setTimeout(async () => {
-            await paymentLogic()
+        setTimeout(() => {
+            paymentModal.classList.add("active")
         }, 1000)
+    })
+})
+
+const formButtons = document.querySelectorAll(".form-action")
+const formContainer = document.querySelector(".form-container")
+const formIndex = document.querySelectorAll(".form-index")
+
+const donePayment = async () => {
+    const alert = await Swal.fire({
+        title: "pembayaran berhasil.",
+        width: 500,
+        timer: 2000,
+        padding: "1em",
+        color: "#716add",
+        backdrop: `
+          rgba(0,0,123,0.4)
+          url("../assets/conffetti.gif")
+          center / cover
+          no-repeat
+        `,
+    })
+    if (alert.isConfirmed || alert.dismiss) {
+        revertPayButton()
+        paymentModal.classList.remove("active")
+    }
+}
+
+formButtons.forEach(button => {
+    button.addEventListener("click", () => {
+        if (button.dataset.action === "submit") {
+            const spinner = document.createElement("i")
+            spinner.classList.add("fa", "fa-spinner", "fa-spin")
+            button.innerText = ""
+            button.append(spinner)
+            setTimeout(async () => {
+                await donePayment()
+                button.innerText = "bayar"
+            }, 2000)
+        } else {
+            const offset = button.dataset.action === "next" ? 1 : -1
+            const allForm = formContainer.children
+            const activeForm = formContainer.querySelector("[data-active]")
+            const newIndex = [...allForm].indexOf(activeForm) + offset
+            for (let index = 0; index <= newIndex; index++) {
+                formIndex[index].classList.add("active")
+            }
+            if (offset === -1) {
+                formIndex[newIndex + 1].classList.remove("active")
+            }
+            allForm[newIndex].setAttribute("data-active", "")
+            activeForm.removeAttribute("data-active")
+        }
+    })
+})
+
+const userData = getUserItem()
+const currentUser = localStorage.getItem("activeUser")
+const userDetail = userData.find(user => user.name === currentUser)
+const allInput = document.querySelectorAll(".input-box")
+allInput.forEach(e => {
+    const input = e.children[1]
+    const props = input.name
+    if (userDetail.hasOwnProperty(props)) {
+        input.value = userDetail[props]
+    }
+})
+
+const paymentMethod = document.querySelector(".payment-method")
+const cardPaymentInput = document.querySelector(".card")
+const otherPaymentInput = document.querySelector(".others")
+Array.from(paymentMethod.children).forEach(method => {
+    method.addEventListener("click", () => {
+        const activeMethod = document.querySelector("[data-payment-active]")
+
+        if (activeMethod) {
+            activeMethod.removeAttribute("data-payment-active")
+        }
+
+        method.setAttribute("data-payment-active", "")
+        if (method.id !== "card") {
+            otherPaymentInput.setAttribute("data-payment-active", "")
+            cardPaymentInput.removeAttribute("data-payment-active")
+        } else {
+            cardPaymentInput.setAttribute("data-payment-active", "")
+            otherPaymentInput.removeAttribute("data-payment-active")
+        }
     })
 })

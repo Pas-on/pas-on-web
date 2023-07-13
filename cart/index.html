@@ -12,6 +12,7 @@
         <script src="../drawer.js" defer></script>
         <script src="../search.js" defer type="module"></script>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.4/dist/sweetalert2.min.css" />
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.4/dist/sweetalert2.min.js"></script>
     </head>
     <body>
         <header class="header">
@@ -98,6 +99,136 @@
                         <button class="cart-payment">bayar</button>
                     </div>
                 </div>
+                <div class="payment-container">
+                    <div class="overlay"></div>
+                    <div class="payment-box">
+                        <h1>Form pembayaran</h1>
+                        <div class="close-button">
+                            <i class="fa-solid fa-xmark"></i>
+                        </div>
+                        <div class="step">
+                            <div class="form-index active">
+                                <h3>1</h3>
+                            </div>
+                            <div class="line"></div>
+                            <div class="form-index">
+                                <h3>2</h3>
+                            </div>
+                            <div class="line"></div>
+                            <div class="form-index">
+                                <h3>3</h3>
+                            </div>
+                        </div>
+                        <div class="form-container">
+                            <div class="detail-box" id="information-box" data-active>
+                                <div class="detail-header">
+                                    <h2>data diri</h2>
+                                </div>
+                                <div class="input-container" id="data-diri-input">
+                                    <div class="input-box">
+                                        <label for="name">name</label>
+                                        <input type="text" id="name" name="name" placeholder="ex: John Doe" autocomplete="off" required />
+                                    </div>
+                                    <div class="input-box">
+                                        <label for="nomorTelepon">nomor hp</label>
+                                        <input
+                                            type="tel"
+                                            id="nomorTelepon"
+                                            name="nomorTelepon"
+                                            placeholder="ex: 0812345678"
+                                            autocomplete="off"
+                                            required
+                                        />
+                                    </div>
+                                    <div class="input-box">
+                                        <label for="email">email</label>
+                                        <input type="email" id="email" name="email" placeholder="ex: JohnDoe@gmail.com" autocomplete="off" required />
+                                    </div>
+                                </div>
+                                <button class="form-action" data-action="next">next</button>
+                            </div>
+                            <div class="detail-box" id="address-box">
+                                <div class="detail-header">
+                                    <h2>alamat</h2>
+                                </div>
+                                <div class="input-container" id="data-alamat-input">
+                                    <div class="input-box">
+                                        <label for="jalan">jalan</label>
+                                        <input type="text" id="jalan" name="jalan" placeholder="ex: jalan thamrin" required />
+                                    </div>
+                                    <div class="input-box">
+                                        <label for="city">kota</label>
+                                        <input type="text" id="city" name="city" placeholder="ex: Medan" required />
+                                    </div>
+                                    <div class="input-box">
+                                        <label for="kecamatan">kecamatan</label>
+                                        <input type="text" id="kecamatan" name="kecamatan" placeholder="ex: kecamatan" required />
+                                    </div>
+                                    <div class="input-box">
+                                        <label for="kelurahan">kelurahan</label>
+                                        <input type="text" id="kelurahan" name="kelurahan" placeholder="ex: kelurahan" required />
+                                    </div>
+                                    <div class="input-box">
+                                        <label for="kodePos">kode pos</label>
+                                        <input type="text" id="kodePos" name="kodePos" placeholder="ex: 20200" required />
+                                    </div>
+                                </div>
+                                <div class="action-box">
+                                    <button class="form-action" data-action="prev">prev</button>
+                                    <button class="form-action" data-action="next">next</button>
+                                </div>
+                            </div>
+                            <div class="detail-box" id="payment-detail">
+                                <div class="detail-header">
+                                    <h2>metode pembayaran</h2>
+                                </div>
+                                <div class="payment-method">
+                                    <div id="card" data-payment-active>
+                                        <i class="fa-solid fa-credit-card"></i>
+                                        <p>card</p>
+                                    </div>
+                                    <div id="dana"><img src="../assets/Logo_dana.webp" alt="logo-dana" /></div>
+                                    <div id="gopay">
+                                        <img src="../assets/gopay-logo.png" alt="logo-gopay" />
+                                    </div>
+                                </div>
+                                <div class="payment-input-container">
+                                    <div class="input-container card" id="data-pembayaran-input" data-payment-active>
+                                        <div class="input-box">
+                                            <label for="cardNumber">card number</label>
+                                            <input
+                                                type="tel"
+                                                name="cardNumber"
+                                                id="cardNumber"
+                                                pattern="\d*"
+                                                maxlength="19"
+                                                placeholder="1111 1111 1111 1111"
+                                            />
+                                        </div>
+                                        <div class="input-box">
+                                            <label for="expireDate">expired date</label>
+                                            <input type="number" name="expireDate" id="expireDate" maxlength="4" placeholder="MM/YY" />
+                                        </div>
+                                        <div class="input-box">
+                                            <label for="cvv">security code</label>
+                                            <input type="password" name="cvv" id="cvv" maxlength="3" placeholder="abc" />
+                                        </div>
+                                    </div>
+                                    <div class="input-container others">
+                                        <div class="input-box">
+                                            <label for="otherTelepon">nomor telepon</label>
+                                            <input type="tel" name="otherTelepon" id="otherTelepon" maxlength="12" placeholder="ex: 081234567" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="action-box">
+                                    <button class="form-action" data-action="prev">prev</button>
+                                    <button class="form-action" data-action="submit" id="submit">submit</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="cart-action-mobile">
                 <div>
@@ -107,6 +238,5 @@
                 <button class="cart-payment">bayar</button>
             </div>
         </main>
-        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.4/dist/sweetalert2.min.js"></script>
     </body>
 </html>

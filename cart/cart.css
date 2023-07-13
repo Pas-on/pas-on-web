@@ -446,6 +446,9 @@ input[type="number"] {
         justify-content: space-between;
         width: 100%;
     }
+    .cart-wrapper {
+        margin-bottom: 60px;
+    }
 }
 
 @keyframes fade {

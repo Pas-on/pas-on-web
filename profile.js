@@ -17,9 +17,11 @@ const userDetail = userData.find(user => user.name === userIndex)
 const inputs = form.querySelectorAll("input")
 inputs.forEach(input => {
     if (input.name === "tanggalLahir") {
-        const date = new Date(userDetail.tanggalLahir)
-        const formattedDate = date.toISOString()
-        input.value = formattedDate
+        const date = userDetail?.tanggalLahir ? new Date(userDetail.tanggalLahir) : null
+        if (date) {
+            const formattedDate = date.toISOString()
+            input.value = formattedDate
+        }
     }
 
     if (input.name === "gender") {
@@ -54,6 +56,5 @@ form.addEventListener("submit", e => {
     setTimeout(() => {
         Swal.fire({ icon: "success", title: "success edit profile", timer: 2000 })
         submitButton.innerText = "submit"
-        submitButton.removeChild(spinner)
     }, 1000)
 })

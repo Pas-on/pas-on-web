@@ -7,7 +7,7 @@ import { getUserItem } from "../utils/userHelper.js"
 const navbar = document.querySelector("header")
 const container = document.querySelector(".container")
 const navbarHeight = navbar.clientHeight
-container.style.height = `calc(100vh - ${navbarHeight}px)`
+container.style.minHeight = `calc(100vh - ${navbarHeight}px)`
 
 const productContainer = document.querySelector(".product-container")
 
@@ -153,9 +153,7 @@ const donePayment = async () => {
     const alert = await Swal.fire({
         title: "pembayaran berhasil.",
         width: 500,
-        timer: 2000,
         padding: "1em",
-        color: "#716add",
         backdrop: `
           rgba(0,0,123,0.4)
           url("../assets/conffetti.gif")
@@ -163,6 +161,8 @@ const donePayment = async () => {
           no-repeat
         `,
     })
+    const cartItem = getCartItem()
+    console.log(cartItem)
     if (alert.isConfirmed || alert.dismiss) {
         revertPayButton()
         paymentModal.classList.remove("active")

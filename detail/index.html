@@ -22,7 +22,7 @@
                     <input type="checkbox" id="hamburger-button" />
                 </label>
             </div>
-            <img src="../assets/logo1.png" alt="logo" onclick="location.href='/index.html'" />
+            <img src="../assets/logo1.png" alt="logo" onclick="location.href='/'" />
             <form action="#" class="search-form" autocomplete="off">
                 <div class="search-bar">
                     <input type="text" placeholder="mau cari apa hari ini?" id="search-input" />
@@ -36,19 +36,21 @@
             <nav>
                 <i class="fa-solid fa-basket-shopping fa-xl" onclick="location.href='/cart/index.html'"></i>
                 <i class="fa-solid fa-heart wishlist-icon fa-xl" onclick="location.href='/wishlist/index.html'"></i>
+
                 <div class="vertical-line"></div>
+                <i class="fa-solid fa-truck-fast fa-xl" onclick="location.href='/delivery/index.html'"></i>
                 <div class="profile">
                     <ul class="drop-down-profile">
                         <div class="arrow"></div>
-                        <li onclick="location.href='/profile.html'">profile</li>
-                        <li onclick="location.href='/auth/login.html'">log out</li>
+                        <li onclick="location.href='profile.html'">profile</li>
+                        <li onclick="location.href='auth/login.html'">log out</li>
                     </ul>
                 </div>
             </nav>
 
             <nav class="nav-mobile">
                 <i class="fa-solid fa-lg fa-magnifying-glass" id="search-icon"></i>
-                <i class="fa-solid fa-basket-shopping fa-xl" onclick="location.href='/cart/index.html'"></i>
+                <i class="fa-solid fa-basket-shopping fa-xl" onclick="location.href='cart/index.html'"></i>
             </nav>
 
             <form action="#" class="search-form-mobile hidden" autocomplete="off">
@@ -67,14 +69,18 @@
         <div class="drawer" id="drawer">
             <div onclick="location.href='/profile.html'">
                 <div class="profile"></div>
-                <p class="profile-name">Jokowi</p>
+                <p class="profile-name"></p>
             </div>
-            <div onclick="location.href='/wishlist/index.html'">
+            <div onclick="location.href='wishlist/index.html'">
                 <i class="fa-regular fa-heart fa-xl"></i>
                 <p>wishlist</p>
                 <i class="fa-solid fa-chevron-right"></i>
             </div>
-
+            <div onclick="location.href='delivery/index.html'">
+                <i class="fa-solid fa-truck-fast fa-xl"></i>
+                <p>pesanan</p>
+                <i class="fa-solid fa-chevron-right"></i>
+            </div>
             <div onclick="location.href='/auth/login.html'">
                 <i class="fa-solid fa-arrow-right-from-bracket"></i>
                 <p>log out</p>

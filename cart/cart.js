@@ -2,8 +2,9 @@ import { getCartItem, setCartItem } from "../utils/cartHelper.js"
 import products from "../data/products.js"
 import Counter from "./Counter.js"
 import { getUserItem } from "../utils/userHelper.js"
+import { getDeliveryItem, setDeliveryItem } from "../utils/deliveryHelper.js"
 
-// find-container-height
+// fluid-container-height
 const navbar = document.querySelector("header")
 const container = document.querySelector(".container")
 const navbarHeight = navbar.clientHeight
@@ -148,7 +149,8 @@ paymentButton.forEach(button => {
 const formButtons = document.querySelectorAll(".form-action")
 const formContainer = document.querySelector(".form-container")
 const formIndex = document.querySelectorAll(".form-index")
-
+const productQty = document.querySelectorAll('input[type="number"]')
+const allForm = formContainer.children
 const donePayment = async () => {
     const alert = await Swal.fire({
         title: "pembayaran berhasil.",
@@ -162,7 +164,16 @@ const donePayment = async () => {
         `,
     })
     const cartItem = getCartItem()
-    console.log(cartItem)
+    const deliveryItem = getDeliveryItem()
+    let detail = []
+    cartItem.forEach((item, index) => {
+        detail.push({ productId: item, quantity: productQty[index].value })
+    })
+    deliveryItem.push({ tanggal: new Date(), detail })
+    setDeliveryItem(deliveryItem)
+    setCartItem([])
+    injectCartProduct()
+    updateSummary()
     if (alert.isConfirmed || alert.dismiss) {
         revertPayButton()
         paymentModal.classList.remove("active")
@@ -182,7 +193,6 @@ formButtons.forEach(button => {
             }, 2000)
         } else {
             const offset = button.dataset.action === "next" ? 1 : -1
-            const allForm = formContainer.children
             const activeForm = formContainer.querySelector("[data-active]")
             const newIndex = [...allForm].indexOf(activeForm) + offset
             for (let index = 0; index <= newIndex; index++) {

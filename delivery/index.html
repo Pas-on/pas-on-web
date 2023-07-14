@@ -12,6 +12,7 @@
         <script src="../search.js" defer type="module"></script>
         <script src="./main.js" defer type="module"></script>
         <script src="../drawer.js" defer></script>
+        <script src="main.js" defer type="module"></script>
     </head>
     <body>
         <header class="header">
@@ -40,8 +41,8 @@
                 <div class="profile">
                     <ul class="drop-down-profile">
                         <div class="arrow"></div>
-                        <li onclick="location.href='profile.html'">profile</li>
-                        <li onclick="location.href='auth/login.html'">log out</li>
+                        <li onclick="location.href='/profile.html'">profile</li>
+                        <li onclick="location.href='/auth/login.html'">log out</li>
                     </ul>
                 </div>
             </nav>
@@ -87,9 +88,8 @@
         <main>
             <div class="container">
                 <h1>pesanan</h1>
-                <div class="delivery-product-container">
-                    <div class="delivery-product-item"></div>
-                </div>
+                <hr />
+                <div class="delivery-product-container"></div>
             </div>
         </main>
     </body>

@@ -81,13 +81,13 @@ const products = [
     },
     {
         id: 9,
-        title: "Pork Belly",
-        price: 150000,
+        title: "Australian Wagyu",
+        price: 450000,
         size: "1kg",
         category: "Daging",
-        image: "/Foto Project/Daging/PorkBelly-removebg-preview.png",
+        image: "/Foto Project/Daging/australian-wagyu.png",
         description:
-            "Pork Belly kami adalah pilihan sempurna bagi pecinta masakan daging yang menginginkan cita rasa dan tekstur yang luar biasa. Dibuat dari potongan perut babi yang lezat dan berlemak, produk ini menawarkan pengalaman gastronomi yang memuaskan. Daging Babi Segar - Pork Belly kami berasal dari sumber yang terpercaya dan diambil dari babi berkualitas tinggi yang dipelihara dengan baik. Potongan perut yang dipilih dengan hati-hati memiliki lapisan lemak yang memberikan kelembutan dan kelezatan yang tak tertandingi.",
+            "Daging Australian Wagyu kami memiliki marbling yang kaya, dengan lemak yang terdistribusi secara merata di dalam serat daging. Marbling ini memberikan tekstur yang lembut dan succulent, serta meningkatkan cita rasa yang khas dan lezat",
     },
     {
         id: 10,
@@ -101,13 +101,13 @@ const products = [
     },
     {
         id: 11,
-        title: "Spam Kaleng (Non-Halal)",
+        title: "fillet dada ayam",
         price: 110000,
         size: "340 gr",
         category: "Daging",
-        image: "/Foto Project/Daging/spam-removebg-preview.png",
+        image: "/Foto Project/Daging/fillet-dada-ayam-removebg-preview.png",
         description:
-            "Spam Kaleng (Non-Halal) adalah produk yang populer dan praktis untuk membuat hidangan yang lezat. Dibuat dari campuran daging babi dan daging sapi dengan bumbu yang khas, Spam Kaleng menawarkan rasa yang gurih dan tekstur yang kenyal. Cocok digunakan dalam sandwich, nasi goreng, atau hidangan lainnya, Spam Kaleng memberikan kelezatan yang mudah dan praktis dalam setiap suapan.",
+            "Fillet dada ayam adalah pilihan tepat bagi kamu yang ingin menikmati hidangan ayam yang sehat dan lezat. Potongan daging ayam yang diambil dari bagian dada ini sudah dihapuskan tulangnya, sehingga kamu tidak perlu repot lagi untuk memisahkan tulang dari daging saat mengolahnya. Dengan ketebalan yang lebih tipis dibandingkan dengan bagian dada ayam yang tidak difillet, fillet dada ayam dapat diolah menjadi berbagai macam hidangan yang lezat, seperti ayam goreng renyah, ayam panggang dengan aroma rempah yang khas, atau masakan yang lebih rumit seperti chicken cordon bleu atau chicken piccata.",
     },
     {
         id: 12,

@@ -53,10 +53,12 @@ const hiddenElements = document.querySelectorAll(".product-item")
 
 hiddenElements.forEach(el => observer.observe(el))
 
+// add-to-wishlist logic
 const wishlistButtons = document.querySelectorAll(".wishlist")
 // get wishlist item dr localStorage
 wishlistButtons.forEach(button => {
     button.addEventListener("click", e => {
+        e.stopPropagation()
         const wishlistItems = getWishlistItem()
         const id = e.target.dataset.id
         const checkId = wishlistItems.includes(id)

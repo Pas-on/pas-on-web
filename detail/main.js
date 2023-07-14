@@ -143,3 +143,29 @@ findFeaturedProduct.forEach(product => {
 `
     productFeatureContainer.appendChild(item)
 })
+
+// add-to-wishlist logic
+const wishlistButtons = document.querySelectorAll(".wishlist")
+// get wishlist item dr localStorage
+wishlistButtons.forEach(button => {
+    button.addEventListener("click", e => {
+        e.stopPropagation()
+        const wishlistItems = getWishlistItem()
+        const id = e.target.dataset.id
+        const checkId = wishlistItems.includes(id)
+        if (!checkId) {
+            wishlistItems.push(id)
+            setWishlistItem(wishlistItems)
+            button.classList.add("active")
+        } else {
+            const updatedWishlistItems = wishlistItems.filter(item => item !== id)
+            setWishlistItem(updatedWishlistItems)
+            button.classList.remove("active")
+        }
+    })
+})
+
+const wishlistItem = getWishlistItem()
+wishlistButtons.forEach(button => {
+    wishlistItem.includes(button.dataset.id) ? button.classList.add("active") : ""
+})

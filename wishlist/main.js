@@ -40,11 +40,6 @@ const fetch = () => {
     } else {
         productContainer.innerHTML = `<p class='full-row'">item tidak ditemukan</p>`
     }
-    const wishlistButtons = document.querySelectorAll(".wishlist")
-
-    wishlistButtons.forEach(button => {
-        wishlistItem.includes(button.dataset.id) ? button.classList.add("active") : ""
-    })
 }
 
 fetch()
@@ -60,10 +55,12 @@ const observer = new IntersectionObserver(entries => {
 const hiddenElements = document.querySelectorAll(".product-item")
 hiddenElements.forEach(el => observer.observe(el))
 
+// add-to-wishlist logic
 const wishlistButtons = document.querySelectorAll(".wishlist")
 // get wishlist item dr localStorage
 wishlistButtons.forEach(button => {
     button.addEventListener("click", e => {
+        e.stopPropagation()
         const wishlistItems = getWishlistItem()
         const id = e.target.dataset.id
         const checkId = wishlistItems.includes(id)
@@ -75,9 +72,13 @@ wishlistButtons.forEach(button => {
             const updatedWishlistItems = wishlistItems.filter(item => item !== id)
             setWishlistItem(updatedWishlistItems)
             button.classList.remove("active")
-            fetch()
         }
     })
+})
+
+const wishlistItem = getWishlistItem()
+wishlistButtons.forEach(button => {
+    wishlistItem.includes(button.dataset.id) ? button.classList.add("active") : ""
 })
 
 // add-to-cart logic

@@ -114,3 +114,32 @@ if (findProducts) {
         })
     }
 }
+
+const findFeaturedProduct = products.filter(product => product.category === findProducts.category)
+const productFeatureContainer = document.querySelector(".product-featured")
+findFeaturedProduct.forEach(product => {
+    const item = document.createElement("div")
+    item.classList.add("product-item", "hidden")
+    item.onclick = () => {
+        location.href = `/detail/index.html?id=${product.id}`
+    }
+    item.innerHTML = `<div class="image-wrapper">
+    <img src="../assets/${product.image}" alt="sayuran" loading="lazy" />
+    <div class="product-action ">
+        <i class="fa-solid  fa-heart wishlist fa-xl" data-id=${product.id}></i>
+    </div>
+</div>
+<div class="product-desc">
+    <div>
+        <p class="product-price">${new Intl.NumberFormat("id-ID", {
+            style: "currency",
+            currency: "IDR",
+        }).format(product.price)}</p>
+        <p class="product-weight">~${product.size}</p>
+    </div>
+    <span class="product-title"> ${product.title} </span>
+</div>
+<button class="product-cart-button" data-id=${product.id} >add to cart</button>
+`
+    productFeatureContainer.appendChild(item)
+})

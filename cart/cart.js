@@ -240,3 +240,16 @@ Array.from(paymentMethod.children).forEach(method => {
         }
     })
 })
+
+// card validation
+const cartInput = document.querySelector("#cardNumber")
+cartInput.addEventListener("input", e => {
+    const formattedNumber = e.target.value.replace(/(\d{4})(?=\d)/g, "$1 ")
+    e.target.value = formattedNumber
+})
+
+const expireDateInput = document.querySelector("#expireDate")
+expireDateInput.addEventListener("input", e => {
+    const formattedDate = e.target.value.replace(/(\d{2})(?=\d)/g, "$1/")
+    e.target.value = formattedDate
+})

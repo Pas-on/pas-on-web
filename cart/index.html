@@ -126,7 +126,7 @@
                                 </div>
                                 <div class="input-container" id="data-diri-input">
                                     <div class="input-box">
-                                        <label for="name">name</label>
+                                        <label for="name">nama</label>
                                         <input type="text" id="name" name="name" placeholder="ex: John Doe" autocomplete="off" required />
                                     </div>
                                     <div class="input-box">
@@ -145,7 +145,9 @@
                                         <input type="email" id="email" name="email" placeholder="ex: JohnDoe@gmail.com" autocomplete="off" required />
                                     </div>
                                 </div>
-                                <button class="form-action" data-action="next">next</button>
+                                <div class="action-box">
+                                    <button class="form-action" data-action="next">next</button>
+                                </div>
                             </div>
                             <div class="detail-box" id="address-box">
                                 <div class="detail-header">
@@ -154,23 +156,23 @@
                                 <div class="input-container" id="data-alamat-input">
                                     <div class="input-box">
                                         <label for="jalan">jalan</label>
-                                        <input type="text" id="jalan" name="jalan" placeholder="ex: jalan thamrin" required />
+                                        <input type="text" id="jalan" name="jalan" placeholder="ex: jalan thamrin" required autocomplete="off" />
                                     </div>
                                     <div class="input-box">
                                         <label for="city">kota</label>
-                                        <input type="text" id="city" name="city" placeholder="ex: Medan" required />
+                                        <input type="text" id="city" name="city" placeholder="ex: Medan" required autocomplete="off" />
                                     </div>
                                     <div class="input-box">
                                         <label for="kecamatan">kecamatan</label>
-                                        <input type="text" id="kecamatan" name="kecamatan" placeholder="ex: kecamatan" required />
+                                        <input type="text" id="kecamatan" name="kecamatan" placeholder="ex: kecamatan" required autocomplete="off" />
                                     </div>
                                     <div class="input-box">
                                         <label for="kelurahan">kelurahan</label>
-                                        <input type="text" id="kelurahan" name="kelurahan" placeholder="ex: kelurahan" required />
+                                        <input type="text" id="kelurahan" name="kelurahan" placeholder="ex: kelurahan" required autocomplete="off" />
                                     </div>
                                     <div class="input-box">
                                         <label for="kodePos">kode pos</label>
-                                        <input type="text" id="kodePos" name="kodePos" placeholder="ex: 20200" required />
+                                        <input type="text" id="kodePos" name="kodePos" placeholder="ex: 20200" required autocomplete="off" />
                                     </div>
                                 </div>
                                 <div class="action-box">
@@ -203,15 +205,16 @@
                                                 pattern="\d*"
                                                 maxlength="19"
                                                 placeholder="1111 1111 1111 1111"
+                                                required
                                             />
                                         </div>
                                         <div class="input-box">
                                             <label for="expireDate">expired date</label>
-                                            <input type="number" name="expireDate" id="expireDate" maxlength="4" placeholder="MM/YY" />
+                                            <input type="tel" name="expireDate" id="expireDate" maxlength="5" placeholder="MM/YY" required />
                                         </div>
                                         <div class="input-box">
                                             <label for="cvv">security code</label>
-                                            <input type="password" name="cvv" id="cvv" maxlength="3" placeholder="abc" />
+                                            <input type="password" name="cvv" id="cvv" maxlength="3" placeholder="abc" required />
                                         </div>
                                     </div>
                                     <div class="input-container others">

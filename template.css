@@ -91,18 +91,19 @@ footer {
     background-color: #a5dc86 !important;
 }
 
-footer .fa-github {
-    font-size: 2rem;
+footer a {
+    font-size: 1rem;
     color: #1e3050;
 }
 
-footer .fa-github:active,
-footer .fa-github:visited {
+footer a:active,
+footer a:visited {
     color: inherit;
 }
 
 footer div {
     display: flex;
+    gap: 1rem;
 }
 
 /* @media (prefers-reduce-motion) {
